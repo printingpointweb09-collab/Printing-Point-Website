@@ -72,22 +72,25 @@
       height: 64px;
     }
 
-    <span class="nav-logo" onclick="gv('home')">
-  <img src=""C:\Users\aashi\OneDrive\Desktop\pp logo.jpeg"" alt="Logo" class="nav-logo-img">
-  Printing <span>Point</span>
-</span>
-    }
+   .nav-logo {
+  font-family: var(--fd);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--gold);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
 
-    .nav-logo span {
-      color: var(--white);
-      font-weight: 300
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 4px;
-      list-style: none
-    }
+.nav-logo-img {
+  height: 36px;
+  width: auto;
+  object-fit: contain;
+}
 
     .nbtn {
       background: transparent;
