@@ -3200,6 +3200,7 @@ src="https://www.facebook.com/tr?id=936562242832347&ev=PageView&noscript=1"
 
       emailjs.send('service_ll189at', 'template_nzv0vxj', templateParams)
         .then(function (response) {
+           fbq('track', 'Lead');
           btn.textContent = 'Sent Successfully!';
           btn.style.background = '#22c55e';
 
