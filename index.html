@@ -3267,6 +3267,14 @@ src="https://www.facebook.com/tr?id=936562242832347&ev=PageView&noscript=1"
       });
     });
   </script>
+  <script>
+  window.addEventListener('DOMContentLoaded', function() {
+    var params = new URLSearchParams(window.location.search);
+    if (params.get('enquiry') === 'open') {
+      openEQ();
+    }
+  });
+</script>
 </body>
 
 </html>
