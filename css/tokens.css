@@ -1,0 +1,39 @@
+/**
+ * Printing Point — Design System Tokens
+ * 
+ * Core variables for brand colors, typography, layout, and transitions.
+ * Shared across main site and detail pages.
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700;800&display=swap');
+
+:root {
+  /* Brand Palette */
+  --navy: #0A1628;
+  --navy-mid: #0F2040;
+  --navy-light: #1A3560;
+  --gold: #C9A84C;
+  --gold-light: #E8C870;
+  --gold-pale: #F5E6B8;
+  --gold-dark: #9B7829;
+
+  /* Neutral Tones */
+  --white: #FFFFFF;
+  --off-white: #F8F6F0;
+  --grey-light: #E8E4DC;
+  --grey-mid: #B0A898;
+  --grey-text: #4A4640;
+
+  /* Typography */
+  --fd: 'Cormorant Garamond', serif;
+  --fb: 'DM Sans', sans-serif;
+  --font-product-title: 'Source Sans 3', sans-serif;
+
+  /* Transitions */
+  --t: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Global Box Sizing Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+}

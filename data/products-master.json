@@ -1,0 +1,44 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "PrintingPointProductDataMaster",
+  "description": "Standardized Product Data Master following Section 7 of the Printing Point Website Master Plan",
+  "version": "1.0.0",
+  "schemaDefinition": {
+    "fields": [
+      "id",
+      "slug",
+      "productName",
+      "category",
+      "subcategory",
+      "shortDescription",
+      "longDescription",
+      "material",
+      "dimensions",
+      "capacity",
+      "weight",
+      "coloursVariants",
+      "keyFeatures",
+      "brandingMethods",
+      "customizationOptions",
+      "moq",
+      "packaging",
+      "leadTime",
+      "idealFor",
+      "productImages",
+      "brandingImages",
+      "packagingImages",
+      "tags"
+    ],
+    "rule": "The website template stays fixed. Product information changes. Different categories can expose different fields without requiring a new card or page design."
+  },
+  "totalProducts": 30,
+  "categories": [
+    "Bottles & Flasks",
+    "Mugs & Sippers",
+    "Bags",
+    "Gift Sets",
+    "Notebooks & Pens",
+    "Electronics",
+    "Mobile Accessories & Keychains"
+  ]
+}
