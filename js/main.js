@@ -335,10 +335,6 @@ function openPrintPanel(panelId) {
   var disc = document.getElementById('print-discovery-section');
   if (disc) disc.style.display = 'none';
 
-  // Hide main grid
-  var mainGrid = document.getElementById('printing-main-grid');
-  if (mainGrid) mainGrid.style.display = 'none';
-
   // Hide all panels
   allPrintingPanels.forEach(function (id) {
     var p = document.getElementById(id);
@@ -370,7 +366,7 @@ function showPanel(panelId) {
 }
 
 /**
- * Return to the main printing services grid (with banner and category pills)
+ * Return to the main printing services overview (with banner and category pills)
  */
 function showMain() {
   var pv = document.getElementById('view-printing');
@@ -389,9 +385,6 @@ function showMain() {
     var p = document.getElementById(id);
     if (p) p.style.display = 'none';
   });
-
-  var mainGrid = document.getElementById('printing-main-grid');
-  if (mainGrid) mainGrid.style.display = 'block';
 
   updateNavbarCatalogVisibility('printing');
 

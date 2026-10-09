@@ -2144,9 +2144,11 @@
       grid-template-columns: auto 1fr auto;
       align-items: center;
       column-gap: 24px;
-      background: rgba(10,22,40,.96);
+      background: #FAF8F5;
       backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(201,168,76,.2);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(212, 196, 175, 0.65);
+      box-shadow: 0 2px 14px rgba(10, 22, 40, 0.05);
     }
 
     .nav-logo {
@@ -2161,13 +2163,13 @@
       font-size: 24px;
       font-weight: 700;
       letter-spacing: .065em;
-      color: #ffffff;
+      color: #0a1628;
       text-transform: uppercase;
       user-select: none;
     }
 
     .nav-logo span {
-      color: #ffffff;
+      color: #0a1628;
     }
 
     .nav-logo-img {
@@ -2175,13 +2177,13 @@
       width: 40px;
       flex: 0 0 40px;
       object-fit: contain;
-      filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.35));
+      filter: drop-shadow(0 1px 3px rgba(10, 22, 40, 0.12));
       transition: transform 0.2s ease, filter 0.2s ease;
     }
 
     .nav-logo:hover .nav-logo-img {
       transform: scale(1.06);
-      filter: drop-shadow(0 2px 8px rgba(223, 192, 122, 0.45));
+      filter: drop-shadow(0 2px 6px rgba(10, 22, 40, 0.25));
     }
 
     .nav-links {
@@ -2206,32 +2208,36 @@
       gap: 5px;
       background: transparent;
       border: 1px solid transparent;
-      color: var(--off-white);
+      color: #0a1628;
       font-family: var(--fb);
-      font-size: 10.5px;
-      font-weight: 500;
+      font-size: 11px;
+      font-weight: 600;
       letter-spacing: .055em;
       text-transform: uppercase;
-      padding: 9px 9px;
+      padding: 9px 11px;
+      border-radius: 6px;
       white-space: nowrap;
       cursor: pointer;
-      transition: color var(--t), border-color var(--t), background var(--t);
+      transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
     }
 
     .nbtn:hover {
-      color: var(--gold);
-      border-color: rgba(201,168,76,.3);
+      color: #0a1628;
+      border-color: rgba(10, 22, 40, 0.2);
+      background: rgba(10, 22, 40, 0.05);
     }
 
     .nbtn.active {
-      color: var(--gold);
-      border-color: rgba(201,168,76,.5);
-      background: rgba(201,168,76,.06);
+      color: #0a1628;
+      font-weight: 700;
+      border-color: #0a1628;
+      background: rgba(10, 22, 40, 0.08);
     }
 
     .nav-menu-btn .chev {
       font-size: 9px;
       line-height: 1;
+      color: #0a1628;
       transition: transform .2s ease;
     }
 
@@ -2248,9 +2254,10 @@
       min-width: 250px;
       max-width: 340px;
       padding: 10px;
-      background: rgba(10,22,40,.985);
-      border: 1px solid rgba(201,168,76,.25);
-      box-shadow: 0 18px 45px rgba(0,0,0,.28);
+      background: #FAF8F5;
+      border: 1px solid rgba(212, 196, 175, 0.85);
+      border-radius: 10px;
+      box-shadow: 0 16px 36px rgba(10, 22, 40, 0.12);
       opacity: 0;
       visibility: hidden;
       pointer-events: none;
@@ -2277,10 +2284,11 @@
 
     .nav-dropdown .drop-label {
       padding: 9px 12px 7px;
-      font-size: 9px;
+      font-size: 9.5px;
       letter-spacing: .18em;
       text-transform: uppercase;
-      color: rgba(201,168,76,.65);
+      font-weight: 700;
+      color: #64748b;
     }
 
     .nav-dropdown button {
@@ -2289,25 +2297,26 @@
       align-items: center;
       justify-content: space-between;
       gap: 12px;
-      padding: 11px 12px;
+      padding: 10px 12px;
       border: 0;
+      border-radius: 6px;
       background: transparent;
-      color: var(--off-white);
+      color: #0a1628;
       font-family: var(--fb);
-      font-size: 11px;
-      font-weight: 400;
+      font-size: 11.5px;
+      font-weight: 600;
       text-align: left;
       cursor: pointer;
       transition: background .18s ease, color .18s ease;
     }
 
     .nav-dropdown button:hover {
-      background: rgba(201,168,76,.08);
-      color: var(--gold-light);
+      background: rgba(10, 22, 40, 0.06);
+      color: #0a1628;
     }
 
     .nav-dropdown button span {
-      color: var(--gold);
+      color: #0a1628;
       font-size: 13px;
     }
 
@@ -2319,12 +2328,40 @@
       white-space: nowrap;
     }
 
-    .nav-actions .btn-o,
-    .nav-actions .btn-p {
-      font-size: 9px;
+    .nav-actions .btn-o {
+      font-size: 10px;
       letter-spacing: .04em;
-      padding: 8px 10px;
+      padding: 9px 12px;
+      border-radius: 6px;
       white-space: nowrap;
+      border: 1.5px solid #0a1628;
+      color: #0a1628;
+      background: transparent;
+      font-weight: 600;
+      transition: all 0.2s ease;
+    }
+
+    .nav-actions .btn-o:hover {
+      background: #0a1628;
+      color: #FAF8F5;
+    }
+
+    .nav-actions .btn-p {
+      font-size: 10px;
+      letter-spacing: .04em;
+      padding: 9px 12px;
+      border-radius: 6px;
+      white-space: nowrap;
+      background: #0a1628;
+      color: #ffffff;
+      border: 1.5px solid #0a1628;
+      font-weight: 600;
+      transition: all 0.2s ease;
+    }
+
+    .nav-actions .btn-p:hover {
+      background: #162c4e;
+      border-color: #162c4e;
     }
 
     /* Medium desktop: preserve all controls while reducing spacing. */
@@ -3286,9 +3323,9 @@
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  background: #f5ede1;
-  border: 1px solid rgba(212, 196, 175, 0.55);
-  box-shadow: 0 16px 40px rgba(10, 22, 40, 0.08);
+  background: #081220;
+  border: 1px solid rgba(10, 22, 40, 0.15);
+  box-shadow: 0 16px 40px rgba(10, 22, 40, 0.12);
 }
 
 .p-hero-img-wrap {
@@ -3303,13 +3340,13 @@
   height: 100%;
   object-fit: cover;
   object-position: center;
-  filter: brightness(0.98) contrast(1.02);
+  filter: brightness(0.95) contrast(1.05);
 }
 
 .p-hero-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(248, 244, 237, 0.35);
+  background: linear-gradient(180deg, rgba(8, 18, 32, 0.22) 0%, rgba(8, 18, 32, 0.45) 100%);
 }
 
 .p-hero-content {
@@ -3342,12 +3379,13 @@
   font-family: var(--fd);
   font-size: 52px;
   font-weight: 800;
-  color: #0a1628;
+  color: #ffffff !important;
   letter-spacing: .08em;
   margin: 0;
   line-height: 1.15;
   text-transform: uppercase;
   text-align: center;
+  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.7);
 }
 
 .p-hero-desc {
@@ -3456,13 +3494,13 @@
   display: none !important;
 }
 
-#view-printing.overview-mode [id$="-panel"] {
+#view-printing.overview-mode [id$="-panel"],
+#view-printing.overview-mode #printing-content {
   display: none !important;
 }
 
 #view-printing:not(.overview-mode) #print-overview-banner,
-#view-printing:not(.overview-mode) #print-discovery-section,
-#view-printing:not(.overview-mode) #printing-main-grid {
+#view-printing:not(.overview-mode) #print-discovery-section {
   display: none !important;
 }
 
@@ -4009,20 +4047,21 @@
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  padding: 11px 12px;
+  padding: 10px 12px;
   border: 0;
+  border-radius: 6px;
   background: transparent;
-  color: var(--off-white);
+  color: #0a1628;
   font-family: var(--fb);
-  font-size: 11px;
-  font-weight: 400;
+  font-size: 11.5px;
+  font-weight: 600;
   text-align: left;
   cursor: pointer;
   transition: background .18s ease, color .18s ease;
 }
 
 .nav-nested-trigger .nested-chev {
-  color: var(--gold);
+  color: #0a1628;
   font-size: 14px;
   font-weight: 600;
   transition: transform .18s ease;
@@ -4030,8 +4069,8 @@
 
 .nav-nested-item:hover > .nav-nested-trigger,
 .nav-nested-item:focus-within > .nav-nested-trigger {
-  background: rgba(201,168,76,.14);
-  color: var(--gold-light);
+  background: rgba(10, 22, 40, 0.06);
+  color: #0a1628;
 }
 
 .nav-nested-item:hover > .nav-nested-trigger .nested-chev {
@@ -4045,16 +4084,16 @@
   min-width: 220px;
   max-width: 280px;
   padding: 10px;
-  background: rgba(10,22,40,.99);
-  border: 1px solid rgba(201,168,76,.3);
-  box-shadow: 0 18px 45px rgba(0,0,0,.35);
+  background: #FAF8F5;
+  border: 1px solid rgba(212, 196, 175, 0.85);
+  box-shadow: 0 16px 36px rgba(10, 22, 40, 0.12);
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
   transform: translateX(6px);
   transition: opacity .18s ease, transform .18s ease, visibility .18s ease;
   z-index: 1250;
-  border-radius: 4px;
+  border-radius: 10px;
 }
 
 .nav-sub-dropdown::before {
@@ -4076,10 +4115,11 @@
 
 .nav-sub-dropdown .drop-label {
   padding: 9px 12px 7px;
-  font-size: 9px;
+  font-size: 9.5px;
   letter-spacing: .18em;
   text-transform: uppercase;
-  color: rgba(201,168,76,.7);
+  font-weight: 700;
+  color: #64748b;
 }
 
 .nav-sub-dropdown button {
@@ -4090,23 +4130,24 @@
   gap: 12px;
   padding: 10px 12px;
   border: 0;
+  border-radius: 6px;
   background: transparent;
-  color: var(--off-white);
+  color: #0a1628;
   font-family: var(--fb);
-  font-size: 11px;
-  font-weight: 400;
+  font-size: 11.5px;
+  font-weight: 600;
   text-align: left;
   cursor: pointer;
   transition: background .18s ease, color .18s ease;
 }
 
 .nav-sub-dropdown button:hover {
-  background: rgba(201,168,76,.12);
-  color: var(--gold-light);
+  background: rgba(10, 22, 40, 0.06);
+  color: #0a1628;
 }
 
 .nav-sub-dropdown button span {
-  color: var(--gold);
+  color: #0a1628;
   font-size: 13px;
 }
 
@@ -4433,11 +4474,11 @@
 
 /* ════════════════════════════════════════════════════════════
    SECTION 3: WHAT WE OFFER (CAPABILITY OVERVIEW)
-   Background is one shade darker than reviews section (#efe8de),
+   Background is one shade darker than reviews section (#efecde),
    wave design removed, 3 stacked horizontal rows without emojis
    ════════════════════════════════════════════════════════════ */
 #view-home #home-capabilities-section {
-  background: #efe8de;
+  background: #efecde;
   position: relative;
   overflow: hidden;
   border-top: 1px solid rgba(226, 218, 205, 0.6);
@@ -4566,13 +4607,13 @@
 
 /* ════════════════════════════════════════════════════════════
    SECTION 5: OUR CLIENTS (COMPANIES WE SERVE)
-   Background is one shade darker than reviews section (#efe8de),
-   white logo tiles, and bottom gold wave ribbon graphic
+   Background is one shade darker than reviews section (#efecde),
+   white logo tiles
    ════════════════════════════════════════════════════════════ */
 #view-home #home-clients-section {
-  background: #efe8de;
+  background: #efecde;
   position: relative;
-  padding-bottom: 80px;
+  padding-bottom: 70px;
   border-top: 1px solid rgba(226, 218, 205, 0.6);
 }
 
@@ -4592,23 +4633,4 @@
   border-color: rgba(201, 168, 76, 0.8);
   box-shadow: 0 8px 24px rgba(10, 22, 40, 0.08);
   transform: translateY(-3px);
-}
-
-/* Flowing Golden Wave Ribbon Graphic at Bottom (Image 1) */
-.clients-gold-wave-bottom {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  height: 80px;
-  overflow: hidden;
-  pointer-events: none;
-  z-index: 1;
-}
-
-.clients-gold-wave-svg {
-  width: 100%;
-  height: 100%;
-  display: block;
 }
