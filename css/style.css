@@ -3283,9 +3283,9 @@
   height: 440px;
   border-radius: 20px;
   overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
   background: #f5ede1;
   border: 1px solid rgba(212, 196, 175, 0.55);
   box-shadow: 0 16px 40px rgba(10, 22, 40, 0.08);
@@ -3309,52 +3309,49 @@
 .p-hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(253, 251, 248, 0.68) 0%, rgba(248, 244, 237, 0.42) 50%, rgba(244, 238, 228, 0.22) 100%);
+  background: rgba(248, 244, 237, 0.35);
 }
 
 .p-hero-content {
-  position: relative;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   z-index: 2;
   text-align: center;
-  max-width: 680px;
-  padding: 30px 40px;
-  background: rgba(255, 255, 255, 0.88);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border: 1px solid rgba(212, 196, 175, 0.75);
-  border-radius: 18px;
-  box-shadow: 0 12px 36px rgba(10, 22, 40, 0.07);
-  margin: 0 20px;
+  width: calc(100% - 40px);
+  max-width: 900px;
+  padding: 0;
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .p-hero-kicker {
-  display: inline-block;
-  font-family: var(--fb);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: .16em;
-  text-transform: uppercase;
-  color: #96722d;
-  margin-bottom: 8px;
+  display: none;
 }
 
 .p-hero-title {
   font-family: var(--fd);
-  font-size: 40px;
-  font-weight: 700;
+  font-size: 52px;
+  font-weight: 800;
   color: #0a1628;
-  letter-spacing: .02em;
-  margin: 0 0 10px;
+  letter-spacing: .08em;
+  margin: 0;
   line-height: 1.15;
+  text-transform: uppercase;
+  text-align: center;
 }
 
 .p-hero-desc {
-  font-family: var(--fb);
-  font-size: 14.5px;
-  color: #334155;
-  max-width: 580px;
-  margin: 0 auto;
-  line-height: 1.6;
+  display: none;
 }
 
 /* Category Pills Section (Navy Blue / Warm White Theme, Not Colorful) */
@@ -3442,7 +3439,8 @@
   margin: 24px 0 16px;
 }
 
-#view-Products {
+#view-Products,
+#view-printing {
   background: #faf8f5;
   min-height: 100vh;
   padding-top: 86px;
@@ -3458,6 +3456,16 @@
   display: none !important;
 }
 
+#view-printing.overview-mode [id$="-panel"] {
+  display: none !important;
+}
+
+#view-printing:not(.overview-mode) #print-overview-banner,
+#view-printing:not(.overview-mode) #print-discovery-section,
+#view-printing:not(.overview-mode) #printing-main-grid {
+  display: none !important;
+}
+
 @media (max-width: 768px) {
   .p-overview-hero {
     width: calc(100% - 24px);
@@ -3466,13 +3474,10 @@
     height: 320px;
   }
   .p-hero-content {
-    padding: 28px 20px;
+    padding: 0 16px;
   }
   .p-hero-title {
     font-size: 30px;
-  }
-  .p-hero-desc {
-    font-size: 13.5px;
   }
   .cat-pills-title {
     font-size: 24px;
@@ -4327,23 +4332,16 @@
   background: #faf8f5;
 }
 
-/* Headings in Sections 2–5 */
+/* Headings in Sections 2–5: Dark blue overall, nothing gold */
 #view-home #home-about-section .ptitle,
+#view-home #home-about-section .ptitle strong,
 #view-home #home-capabilities-section .ptitle,
-#view-home #home-reviews-section .ptitle,
-#view-home #home-clients-section .ptitle {
-  color: var(--navy) !important;
-}
-
-/* Gold heading highlights matching reference images (Overview in Sec 3, Serve in Sec 5) */
 #view-home #home-capabilities-section .ptitle strong,
+#view-home #home-reviews-section .ptitle,
+#view-home #home-reviews-section .ptitle strong,
+#view-home #home-clients-section .ptitle,
 #view-home #home-clients-section .ptitle strong {
-  color: var(--gold) !important;
-  font-weight: 700;
-}
-
-#view-home #home-about-section .ptitle strong {
-  color: var(--navy) !important;
+  color: #0a1628 !important;
   font-weight: 700;
 }
 
@@ -4435,33 +4433,15 @@
 
 /* ════════════════════════════════════════════════════════════
    SECTION 3: WHAT WE OFFER (CAPABILITY OVERVIEW)
-   Matching Image 2: Warm background, top-right gold wave lines,
-   and 3 stacked horizontal rows without emojis
+   Background is one shade darker than reviews section (#efe8de),
+   wave design removed, 3 stacked horizontal rows without emojis
    ════════════════════════════════════════════════════════════ */
 #view-home #home-capabilities-section {
-  background: #faf7f2;
+  background: #efe8de;
   position: relative;
   overflow: hidden;
   border-top: 1px solid rgba(226, 218, 205, 0.6);
   border-bottom: 1px solid rgba(226, 218, 205, 0.6);
-}
-
-/* Decorative top-right wave curves matching Image 2 */
-.cap-bg-decor {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 520px;
-  height: 220px;
-  pointer-events: none;
-  z-index: 1;
-  opacity: 0.9;
-}
-
-.cap-wave-svg {
-  width: 100%;
-  height: 100%;
-  display: block;
 }
 
 /* 3 Horizontal Stacked Rows Container */
@@ -4571,19 +4551,26 @@
     height: 38px;
     min-width: 38px;
   }
-  .cap-bg-decor {
-    width: 260px;
-    height: 140px;
-  }
+}
+
+/* ════════════════════════════════════════════════════════════
+   SECTION 4: TESTIMONIALS (CLIENT REVIEWS)
+   Warm white / light background (#faf8f5) without wave design
+   ════════════════════════════════════════════════════════════ */
+#view-home #home-reviews-section {
+  background: #faf8f5;
+  position: relative;
+  border-top: 1px solid rgba(226, 218, 205, 0.6);
+  border-bottom: 1px solid rgba(226, 218, 205, 0.6);
 }
 
 /* ════════════════════════════════════════════════════════════
    SECTION 5: OUR CLIENTS (COMPANIES WE SERVE)
-   Warm background, white logo tiles, and bottom gold wave graphic
-   matching Image 1 ("jo last mein graphic h vo bhi daaldo")
+   Background is one shade darker than reviews section (#efe8de),
+   white logo tiles, and bottom gold wave ribbon graphic
    ════════════════════════════════════════════════════════════ */
 #view-home #home-clients-section {
-  background: #faf8f5;
+  background: #efe8de;
   position: relative;
   padding-bottom: 80px;
   border-top: 1px solid rgba(226, 218, 205, 0.6);

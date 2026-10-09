@@ -154,7 +154,7 @@ function closeAllViews() {
   if (pv) pv.classList.add('overview-mode');
 
   var banner = document.getElementById('p-overview-banner');
-  if (banner) banner.style.display = 'block';
+  if (banner) banner.style.display = 'flex';
 
   var disc = document.getElementById('p-discovery-section');
   if (disc) disc.style.display = 'block';
@@ -312,12 +312,15 @@ var allPrintingPanels = [
  * @param {string} panelId - The panel ID to display
  */
 function openPrintPanel(panelId) {
-  // Ensure view-printing is active
+  // Ensure view-printing is active and not in overview-mode
   document.querySelectorAll('.view').forEach(function (v) {
     v.classList.remove('active');
   });
   var pv = document.getElementById('view-printing');
-  if (pv) pv.classList.add('active');
+  if (pv) {
+    pv.classList.add('active');
+    pv.classList.remove('overview-mode');
+  }
 
   document.querySelectorAll('.nbtn').forEach(function (b) {
     b.classList.remove('active');
@@ -325,9 +328,12 @@ function openPrintPanel(panelId) {
   var nb = document.getElementById('nb-printing');
   if (nb) nb.classList.add('active');
 
-  // Hide the hero banner (no banner in sub-categories)
-  var hero = pv ? pv.querySelector('.flagship-hero') : null;
-  if (hero) hero.style.display = 'none';
+  // Hide overview hero banner and category pills
+  var banner = document.getElementById('print-overview-banner');
+  if (banner) banner.style.display = 'none';
+
+  var disc = document.getElementById('print-discovery-section');
+  if (disc) disc.style.display = 'none';
 
   // Hide main grid
   var mainGrid = document.getElementById('printing-main-grid');
@@ -364,12 +370,20 @@ function showPanel(panelId) {
 }
 
 /**
- * Return to the main printing services grid (with banner)
+ * Return to the main printing services grid (with banner and category pills)
  */
 function showMain() {
   var pv = document.getElementById('view-printing');
-  var hero = pv ? pv.querySelector('.flagship-hero') : null;
-  if (hero) hero.style.display = 'none';
+  if (pv) {
+    pv.classList.add('overview-mode');
+  }
+
+  // Restore overview hero banner and category pills
+  var banner = document.getElementById('print-overview-banner');
+  if (banner) banner.style.display = 'flex';
+
+  var disc = document.getElementById('print-discovery-section');
+  if (disc) disc.style.display = 'block';
 
   allPrintingPanels.forEach(function (id) {
     var p = document.getElementById(id);

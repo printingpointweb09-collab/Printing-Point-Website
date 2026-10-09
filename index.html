@@ -188,16 +188,6 @@
 </section>
 <!-- TABLE OF CONTENTS / CAPABILITY OVERVIEW -->
 <section class="page section compact-section" id="home-capabilities-section">
-  <!-- Decorative top-right gold wave line graphic from reference image 2 -->
-  <div class="cap-bg-decor" aria-hidden="true">
-    <svg viewBox="0 0 600 240" fill="none" preserveAspectRatio="none" class="cap-wave-svg" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0,130 C180,210 380,20 600,100" stroke="rgba(201,168,76,0.28)" stroke-width="1.3"/>
-      <path d="M0,150 C190,225 390,35 600,118" stroke="rgba(201,168,76,0.22)" stroke-width="1.2"/>
-      <path d="M0,170 C200,240 400,50 600,135" stroke="rgba(201,168,76,0.18)" stroke-width="1.1"/>
-      <path d="M0,190 C210,255 410,65 600,152" stroke="rgba(201,168,76,0.13)" stroke-width="1"/>
-      <path d="M0,210 C220,270 420,80 600,170" stroke="rgba(201,168,76,0.08)" stroke-width="0.9"/>
-    </svg>
-  </div>
   <div class="pi">
     <div class="eyebrow">What We Offer</div>
     <h2 class="ptitle">Capability <strong>Overview</strong></h2>
@@ -396,9 +386,7 @@
     <div class="p-hero-overlay"></div>
   </div>
   <div class="p-hero-content">
-    <span class="p-hero-kicker">✦ Complete Corporate Showcase</span>
-    <h1 class="p-hero-title">All Products</h1>
-    <p class="p-hero-desc">Bespoke corporate gifting &amp; custom merchandise engineered for lasting impressions — from vacuum-insulated drinkware and executive organizers to luxury gift hampers and electronics.</p>
+    <h1 class="p-hero-title">ALL PRODUCTS</h1>
   </div>
 </section>
 
@@ -4005,14 +3993,104 @@
 </div>
 </div>
 </div>
-</div><!-- /view-Products -->
-<!-- PRINTING SERVICES VIEW -->
-<div class="view" id="view-printing">
+<!-- ══════════════════════════════════════
+     PRINTING SERVICES VIEW
+     Replicated Products Overview Architecture
+══════════════════════════════════════ -->
+<div class="view overview-mode" id="view-printing">
 
+<!-- ===================== ALL PRINTING SERVICES HERO BANNER ===================== -->
+<section class="p-overview-hero" id="print-overview-banner">
+  <div class="p-hero-img-wrap">
+    <img src="assets/all-products-banner-beige.jpg" alt="All Printing Services Banner" class="p-hero-banner-img" />
+    <div class="p-hero-overlay"></div>
+  </div>
+  <div class="p-hero-content">
+    <h1 class="p-hero-title">ALL PRINTING SERVICES</h1>
+  </div>
+</section>
+
+<!-- ===================== PRINTING CATEGORIES PILLS ===================== -->
+<section class="cg-sec p-cat-pills-section" id="print-discovery-section">
+  <div class="cg-container">
+    <div class="cat-pills-header">
+      <h2 class="cat-pills-title">Printing Categories</h2>
+    </div>
+    
+    <div class="cat-pills-scroll-track" id="printing-categories-track">
+      <!-- 1. Visiting Cards -->
+      <button type="button" class="cat-pill" onclick="openPrintPanel('vc-panel')" title="Visiting Cards">
+        <svg class="cat-pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="4" width="20" height="16" rx="2"/>
+          <line x1="2" y1="10" x2="22" y2="10"/>
+        </svg>
+        <span class="cat-pill-text">Visiting Cards</span>
+      </button>
+
+      <!-- 2. Letterheads & Bill Books -->
+      <button type="button" class="cat-pill" onclick="openPrintPanel('lb-panel')" title="Letterheads &amp; Bill Books">
+        <svg class="cat-pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+          <polyline points="14 2 14 8 20 8"/>
+          <line x1="16" y1="13" x2="8" y2="13"/>
+          <line x1="16" y1="17" x2="8" y2="17"/>
+        </svg>
+        <span class="cat-pill-text">Letterheads &amp; Bill Books</span>
+      </button>
+
+      <!-- 3. Envelopes -->
+      <button type="button" class="cat-pill" onclick="openPrintPanel('env-panel')" title="Envelopes">
+        <svg class="cat-pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+          <polyline points="22,6 12,13 2,6"/>
+        </svg>
+        <span class="cat-pill-text">Envelopes</span>
+      </button>
+
+      <!-- 4. ID Cards -->
+      <button type="button" class="cat-pill" onclick="openPrintPanel('id-panel')" title="ID Cards">
+        <svg class="cat-pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="4" width="18" height="16" rx="2"/>
+          <circle cx="12" cy="10" r="3"/>
+          <path d="M7 17c0-2 2.2-3 5-3s5 1 5 3"/>
+        </svg>
+        <span class="cat-pill-text">ID Cards</span>
+      </button>
+
+      <!-- 5. Doctor Files -->
+      <button type="button" class="cat-pill" onclick="openPrintPanel('df-panel')" title="Doctor Files">
+        <svg class="cat-pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+          <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+          <line x1="12" y1="8" x2="12" y2="14"/>
+          <line x1="9" y1="11" x2="15" y2="11"/>
+        </svg>
+        <span class="cat-pill-text">Doctor Files</span>
+      </button>
+
+      <!-- 6. Stickers & Labels -->
+      <button type="button" class="cat-pill" onclick="openPrintPanel('sl-panel')" title="Stickers &amp; Labels">
+        <svg class="cat-pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/>
+          <circle cx="7" cy="7" r="1.5"/>
+        </svg>
+        <span class="cat-pill-text">Stickers &amp; Labels</span>
+      </button>
+
+      <!-- 7. Garment Tags -->
+      <button type="button" class="cat-pill" onclick="openPrintPanel('gt-panel')" title="Garment Tags">
+        <svg class="cat-pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20.38 3.46L16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z"/>
+        </svg>
+        <span class="cat-pill-text">Garment Tags</span>
+      </button>
+    </div>
+  </div>
+</section>
 
 <div class="csec active" id="printing-content">
-<div class="page light" style="padding-top:80px;">
-<div class="pi" style="padding-top:20px;">
+<div class="page light" style="padding-top:10px;">
+<div class="pi" style="padding-top:10px;">
 <!-- SUBCATEGORY PANEL (hidden by default) -->
 <div id="vc-panel" style="display:none; margin-bottom:32px;">
 <div style="display:flex; align-items:center; gap:12px; margin-bottom:20px;">
