@@ -4356,3 +4356,218 @@
   color: #94A3B8;
   font-style: italic;
 }
+
+/* ════════════════════════════════════════════════════════════
+   HOMEPAGE PEARL-WHITE & NAVY-BLUE PALETTE (SECTIONS 2, 3, 5)
+   ════════════════════════════════════════════════════════════ */
+
+/* Headings in Sections 2–5: final 1-2 words (and overall heading) consistently navy blue, never gold */
+#view-home #home-about-section .ptitle,
+#view-home #home-capabilities-section .ptitle,
+#view-home #home-reviews-section .ptitle,
+#view-home #home-clients-section .ptitle {
+  color: var(--navy) !important; /* #0a1628 */
+}
+
+#view-home #home-about-section .ptitle strong,
+#view-home #home-capabilities-section .ptitle strong,
+#view-home #home-reviews-section .ptitle strong,
+#view-home #home-clients-section .ptitle strong {
+  color: var(--navy) !important; /* #0a1628 - navy blue, never gold */
+  font-weight: 700;
+}
+
+/* Eyebrows & Dividers in Sections 2, 3, 5 */
+#view-home :is(#home-about-section, #home-capabilities-section, #home-clients-section) .eyebrow {
+  color: var(--gold);
+}
+
+#view-home :is(#home-about-section, #home-capabilities-section, #home-clients-section) .eyebrow::before {
+  background: var(--gold);
+}
+
+#view-home :is(#home-about-section, #home-capabilities-section, #home-clients-section) .pdiv {
+  background: linear-gradient(90deg, #0a1628 0%, var(--gold) 45%, transparent 100%);
+}
+
+/* ════════════════════════════════════════════════════════════
+   SECTION 2: WHO WE ARE (BUILT FOR CORPORATE SCALE)
+   Clean white background, soft blue accents, navy headings & text
+   ════════════════════════════════════════════════════════════ */
+#view-home #home-about-section {
+  background: #ffffff;
+  color: #334155;
+}
+
+#view-home #home-about-section .atext p {
+  color: #334155;
+  font-size: 15px;
+  line-height: 1.85;
+}
+
+#view-home #home-about-section .ahlite {
+  font-family: var(--fd);
+  font-size: 20px;
+  font-style: italic;
+  color: #0a1628;
+  background: rgba(224, 242, 254, 0.45); /* soft light-blue accent tint */
+  border-left: 3px solid var(--gold);      /* gold highlight */
+  border-radius: 0 8px 8px 0;
+  padding: 18px 24px;
+  margin: 28px 0;
+  line-height: 1.55;
+}
+
+#view-home #home-about-section .vcard {
+  background: #ffffff;
+  border: 1px solid rgba(186, 230, 253, 0.75); /* soft blue accent border */
+  box-shadow: 0 4px 16px rgba(10, 22, 40, 0.04);
+  border-radius: 10px;
+  padding: 24px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+#view-home #home-about-section .vcard:hover {
+  border-color: rgba(56, 189, 248, 0.8);
+  box-shadow: 0 8px 24px rgba(10, 22, 40, 0.08);
+  transform: translateY(-3px);
+}
+
+#view-home #home-about-section .vico {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: rgba(224, 242, 254, 0.6); /* soft blue accent */
+  border: 1px solid rgba(186, 230, 253, 0.8);
+  font-size: 22px;
+  margin-bottom: 14px;
+  color: #0a1628;
+}
+
+#view-home #home-about-section .vtitle {
+  color: #0a1628; /* navy-blue heading */
+  font-size: 13.5px;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+#view-home #home-about-section .vtxt {
+  color: #475569;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* ════════════════════════════════════════════════════════════
+   SECTION 3: WHAT WE OFFER (CAPABILITY OVERVIEW)
+   Pearl-white background, soft blue accents, navy headings & icons
+   ════════════════════════════════════════════════════════════ */
+#view-home #home-capabilities-section {
+  background: #f8fafc; /* pearl-white with subtle cool tone */
+  border-top: 1px solid rgba(226, 232, 240, 0.85);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.85);
+}
+
+#view-home #home-capabilities-section .tgrid {
+  gap: 16px;
+  background: transparent;
+}
+
+#view-home #home-capabilities-section .titem {
+  background: #ffffff;
+  border: 1px solid rgba(186, 230, 253, 0.75); /* soft blue accent border */
+  border-left: 3px solid #0a1628;               /* navy blue accent */
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(10, 22, 40, 0.04);
+  padding: 24px 28px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+}
+
+#view-home #home-capabilities-section .titem:hover {
+  background: #f0f9ff;                          /* soft light-blue tint on hover */
+  border-color: rgba(56, 189, 248, 0.8);
+  border-left-color: var(--gold);               /* gold highlight */
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(10, 22, 40, 0.08);
+}
+
+#view-home #home-capabilities-section .tico {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: rgba(224, 242, 254, 0.7); /* soft light-blue accent */
+  border: 1px solid rgba(186, 230, 253, 0.8);
+  font-size: 24px;
+  flex-shrink: 0;
+  color: #0a1628;
+}
+
+#view-home #home-capabilities-section .tlbl {
+  color: #0284c7;                               /* light-blue accent */
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+#view-home #home-capabilities-section .tname {
+  color: #0a1628;                               /* navy-blue heading */
+  font-family: var(--fd);
+  font-size: 22px;
+  font-weight: 700;
+}
+
+#view-home #home-capabilities-section .tcnt {
+  color: #475569;
+  font-size: 12px;
+  line-height: 1.5;
+  margin-top: 4px;
+}
+
+#view-home #home-capabilities-section .tarr {
+  color: #0a1628;
+  opacity: 0.6;
+  font-size: 20px;
+  transition: all var(--t);
+}
+
+#view-home #home-capabilities-section .titem:hover .tarr {
+  color: var(--gold);
+  opacity: 1;
+  transform: translateX(5px);
+}
+
+/* ════════════════════════════════════════════════════════════
+   SECTION 5: OUR CLIENTS (COMPANIES WE SERVE)
+   Clean white background, soft blue borders, navy headings
+   ════════════════════════════════════════════════════════════ */
+#view-home #home-clients-section {
+  background: #ffffff;
+  border-top: 1px solid rgba(226, 232, 240, 0.85);
+}
+
+#view-home #home-clients-section p {
+  color: #334155 !important;
+}
+
+#view-home #home-clients-section .logotile {
+  background: #ffffff;
+  border: 1px solid rgba(186, 230, 253, 0.75); /* soft blue accent border */
+  box-shadow: 0 2px 10px rgba(10, 22, 40, 0.03);
+  border-radius: 10px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+#view-home #home-clients-section .logotile:hover {
+  border-color: rgba(56, 189, 248, 0.8);
+  box-shadow: 0 8px 22px rgba(10, 22, 40, 0.08);
+  transform: translateY(-3px);
+}
