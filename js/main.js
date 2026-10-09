@@ -159,9 +159,10 @@ function closeAllViews() {
   var disc = document.getElementById('p-discovery-section');
   if (disc) disc.style.display = 'block';
 
+  // Do not split products category-wise on the overview page; keep them in their respective sub-categories
   corporateViews.forEach(function (id) {
     var el = document.getElementById(id);
-    if (el) el.style.display = 'block';
+    if (el) el.style.display = 'none';
   });
 
   if (typeof enhanceProductCards === 'function') {

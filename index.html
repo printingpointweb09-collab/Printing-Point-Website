@@ -186,43 +186,67 @@
 </div>
 </div>
 </section>
-<!-- TABLE OF CONTENTS -->
+<!-- TABLE OF CONTENTS / CAPABILITY OVERVIEW -->
 <section class="page section compact-section" id="home-capabilities-section">
-<div class="pi">
-<div class="eyebrow">What We Offer</div>
-<h2 class="ptitle">Capability <strong>Overview</strong></h2>
-<div class="pdiv"></div>
-<div class="tgrid">
-<div class="titem" onclick="gv('Products','corporate')">
-<div class="tico">🎁</div>
-<div class="tinfo">
-<div class="tlbl">Products</div>
-<div class="tname">Corporate Products</div>
-<div class="tcnt">Bottles · Mugs · Bags · Gift Sets · Notebooks · Electronics · More</div>
-</div>
-<div class="tarr">→</div>
-</div>
-<div class="titem" onclick="gv('printing')">
-<div class="tico">🖨️</div>
-<div class="tinfo">
-<div class="tlbl">Services</div>
-<div class="tname">Printing Services</div>
-<div class="tcnt">Visiting Cards · Letterheads · Envelopes · ID Cards · Stickers · More</div>
-</div>
-<div class="tarr">→</div>
-</div>
-<!-- CONTACT & INQUIRY → opens enquiry modal -->
-<div class="titem" onclick="openEQ()" style="grid-column: 1 / -1;">
-<div class="tico">💬</div>
-<div class="tinfo">
-<div class="tlbl">Reach Us</div>
-<div class="tname">Contact &amp; Inquiry</div>
-<div class="tcnt">WhatsApp · Email · Quote Request Form</div>
-</div>
-<div class="tarr">→</div>
-</div>
-</div>
-</div>
+  <!-- Decorative top-right gold wave line graphic from reference image 2 -->
+  <div class="cap-bg-decor" aria-hidden="true">
+    <svg viewBox="0 0 600 240" fill="none" preserveAspectRatio="none" class="cap-wave-svg" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,130 C180,210 380,20 600,100" stroke="rgba(201,168,76,0.28)" stroke-width="1.3"/>
+      <path d="M0,150 C190,225 390,35 600,118" stroke="rgba(201,168,76,0.22)" stroke-width="1.2"/>
+      <path d="M0,170 C200,240 400,50 600,135" stroke="rgba(201,168,76,0.18)" stroke-width="1.1"/>
+      <path d="M0,190 C210,255 410,65 600,152" stroke="rgba(201,168,76,0.13)" stroke-width="1"/>
+      <path d="M0,210 C220,270 420,80 600,170" stroke="rgba(201,168,76,0.08)" stroke-width="0.9"/>
+    </svg>
+  </div>
+  <div class="pi">
+    <div class="eyebrow">What We Offer</div>
+    <h2 class="ptitle">Capability <strong>Overview</strong></h2>
+    <div class="pdiv"></div>
+    <div class="cap-card-container">
+      <!-- Row 1: Corporate Products -->
+      <div class="cap-row" onclick="gv('Products','corporate')" role="button" tabindex="0" title="Explore Corporate Products">
+        <div class="cap-info">
+          <div class="cap-tag">Products</div>
+          <div class="cap-name">Corporate Products</div>
+          <div class="cap-desc">Bottles · Mugs · Bags · Gift Sets · Notebooks · Electronics · More</div>
+        </div>
+        <div class="cap-circle-arrow" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </div>
+      </div>
+      <!-- Row 2: Printing Services -->
+      <div class="cap-row" onclick="gv('printing')" role="button" tabindex="0" title="Explore Printing Services">
+        <div class="cap-info">
+          <div class="cap-tag">Services</div>
+          <div class="cap-name">Printing Services</div>
+          <div class="cap-desc">Visiting Cards · Letterheads · Envelopes · ID Cards · Stickers · More</div>
+        </div>
+        <div class="cap-circle-arrow" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </div>
+      </div>
+      <!-- Row 3: Contact & Inquiry -->
+      <div class="cap-row" onclick="openEQ()" role="button" tabindex="0" title="Contact &amp; Inquiry">
+        <div class="cap-info">
+          <div class="cap-tag">Reach Us</div>
+          <div class="cap-name">Contact &amp; Inquiry</div>
+          <div class="cap-desc">WhatsApp · Email · Quote Request Form</div>
+        </div>
+        <div class="cap-circle-arrow" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 <!-- REVIEWS -->
 <section class="page light section compact-section" id="home-reviews-section">
@@ -323,6 +347,37 @@
 <div class="logotile"><img alt="Fyrlaast by AGNi" src="assets/images/clients/fyrlaast-by-agni.png"/></div>
 </div>
 </div>
+<!-- Decorative flowing golden wave graphic at bottom from reference image 1 ("jo last mein graphic h vo bhi daaldo") -->
+<div class="clients-gold-wave-bottom" aria-hidden="true">
+  <svg viewBox="0 0 1440 100" fill="none" preserveAspectRatio="none" class="clients-gold-wave-svg" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,82 C320,18 680,94 1040,32 C1200,4 1340,36 1440,64" stroke="url(#goldGrad1)" stroke-width="1.8"/>
+    <path d="M0,89 C340,26 700,97 1060,39 C1220,14 1350,42 1440,71" stroke="url(#goldGrad2)" stroke-width="1.4"/>
+    <path d="M0,95 C360,36 720,101 1080,47 C1240,24 1360,50 1440,77" stroke="url(#goldGrad3)" stroke-width="1.2"/>
+    <path d="M0,100 C380,46 740,104 1100,55 C1260,34 1370,58 1440,83" stroke="url(#goldGrad4)" stroke-width="1"/>
+    <defs>
+      <linearGradient id="goldGrad1" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#c9a84c" stop-opacity="0.85"/>
+        <stop offset="50%" stop-color="#dfc07a" stop-opacity="0.95"/>
+        <stop offset="100%" stop-color="#b38938" stop-opacity="0.75"/>
+      </linearGradient>
+      <linearGradient id="goldGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#c9a84c" stop-opacity="0.65"/>
+        <stop offset="50%" stop-color="#dfc07a" stop-opacity="0.8"/>
+        <stop offset="100%" stop-color="#b38938" stop-opacity="0.55"/>
+      </linearGradient>
+      <linearGradient id="goldGrad3" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#c9a84c" stop-opacity="0.45"/>
+        <stop offset="50%" stop-color="#dfc07a" stop-opacity="0.65"/>
+        <stop offset="100%" stop-color="#b38938" stop-opacity="0.38"/>
+      </linearGradient>
+      <linearGradient id="goldGrad4" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#c9a84c" stop-opacity="0.3"/>
+        <stop offset="50%" stop-color="#dfc07a" stop-opacity="0.45"/>
+        <stop offset="100%" stop-color="#b38938" stop-opacity="0.22"/>
+      </linearGradient>
+    </defs>
+  </svg>
+</div>
 </section>
 </div><!-- /view-home -->
 <!-- ══════════════════════════════════════
@@ -337,7 +392,7 @@
 <!-- ===================== ALL PRODUCTS HERO BANNER ===================== -->
 <section class="p-overview-hero" id="p-overview-banner">
   <div class="p-hero-img-wrap">
-    <img src="assets/all-products-banner.jpg" alt="All Products Banner" class="p-hero-banner-img" />
+    <img src="assets/all-products-banner-beige.jpg" alt="All Products Banner" class="p-hero-banner-img" />
     <div class="p-hero-overlay"></div>
   </div>
   <div class="p-hero-content">
@@ -356,7 +411,7 @@
     
     <div class="cat-pills-scroll-track" id="corporate-categories">
       <!-- 1. Bottles & Flasks -->
-      <button type="button" class="cat-pill pill-coral" onclick="openBottlesView()" title="Bottles &amp; Flasks">
+      <button type="button" class="cat-pill" onclick="openBottlesView()" title="Bottles &amp; Flasks">
         <svg class="cat-pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M10 2h4M10 5h4M9 8h6v12a2 2 0 0 1-2 2h-2a2 2 0 0 1-2-2V8zM8 8a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2"/>
         </svg>
@@ -364,7 +419,7 @@
       </button>
 
       <!-- 2. Mugs & Sippers -->
-      <button type="button" class="cat-pill pill-beige" onclick="openMugsSippersView()" title="Mugs &amp; Sippers">
+      <button type="button" class="cat-pill" onclick="openMugsSippersView()" title="Mugs &amp; Sippers">
         <svg class="cat-pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M18 8h1a4 4 0 0 1 0 8h-1M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8zM6 2v2M10 2v2M14 2v2"/>
         </svg>
@@ -372,7 +427,7 @@
       </button>
 
       <!-- 3. Bags -->
-      <button type="button" class="cat-pill pill-sage" onclick="openBagsView()" title="Bags">
+      <button type="button" class="cat-pill" onclick="openBagsView()" title="Bags">
         <svg class="cat-pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <rect x="3" y="7" width="18" height="14" rx="3"/>
           <path d="M8 7V5a4 4 0 0 1 8 0v2M12 11v2"/>
@@ -381,7 +436,7 @@
       </button>
 
       <!-- 4. Gift Sets -->
-      <button type="button" class="cat-pill pill-amber" onclick="openGiftSetsView()" title="Gift Sets">
+      <button type="button" class="cat-pill" onclick="openGiftSetsView()" title="Gift Sets">
         <svg class="cat-pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <polyline points="20 12 20 22 4 22 4 12"/>
           <rect x="2" y="7" width="20" height="5"/>
@@ -392,7 +447,7 @@
       </button>
 
       <!-- 5. Notebooks -->
-      <button type="button" class="cat-pill pill-periwinkle" onclick="openNotebooksView()" title="Notebooks">
+      <button type="button" class="cat-pill" onclick="openNotebooksView()" title="Notebooks">
         <svg class="cat-pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
           <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
@@ -403,7 +458,7 @@
       </button>
 
       <!-- 6. Leatherite Diaries -->
-      <button type="button" class="cat-pill pill-peach" onclick="openLeatheriteDiariesView()" title="Leatherite Diaries">
+      <button type="button" class="cat-pill" onclick="openLeatheriteDiariesView()" title="Leatherite Diaries">
         <svg class="cat-pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M4 4v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2z"/>
           <line x1="8" y1="2" x2="8" y2="22"/>
@@ -413,7 +468,7 @@
       </button>
 
       <!-- 7. Power Bank Diaries -->
-      <button type="button" class="cat-pill pill-teal" onclick="openPowerBankDiariesView()" title="Power Bank Diaries">
+      <button type="button" class="cat-pill" onclick="openPowerBankDiariesView()" title="Power Bank Diaries">
         <svg class="cat-pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <rect x="2" y="7" width="16" height="10" rx="2"/>
           <line x1="20" y1="11" x2="20" y2="13"/>
@@ -424,7 +479,7 @@
       </button>
 
       <!-- 8. Theme Diaries -->
-      <button type="button" class="cat-pill pill-rose" onclick="openThemeDiariesView()" title="Theme Diaries">
+      <button type="button" class="cat-pill" onclick="openThemeDiariesView()" title="Theme Diaries">
         <svg class="cat-pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <circle cx="12" cy="12" r="10"/>
           <path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01"/>
@@ -433,7 +488,7 @@
       </button>
 
       <!-- 9. Electronics -->
-      <button type="button" class="cat-pill pill-ice" onclick="openElectronicsView()" title="Electronics">
+      <button type="button" class="cat-pill" onclick="openElectronicsView()" title="Electronics">
         <svg class="cat-pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <rect x="4" y="4" width="16" height="12" rx="2"/>
           <line x1="8" y1="20" x2="16" y2="20"/>
@@ -443,7 +498,7 @@
       </button>
 
       <!-- 10. Mobile Accessories -->
-      <button type="button" class="cat-pill pill-sand" onclick="openMobileStandsView()" title="Mobile Accessories &amp; Keychains">
+      <button type="button" class="cat-pill" onclick="openMobileStandsView()" title="Mobile Accessories &amp; Keychains">
         <svg class="cat-pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <rect x="5" y="2" width="14" height="20" rx="2"/>
           <line x1="12" y1="18" x2="12.01" y2="18"/>

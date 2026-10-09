@@ -3275,14 +3275,20 @@
    ════════════════════════════════════════════════════════════ */
 .p-overview-hero {
   position: relative;
-  width: 100%;
-  min-height: 280px;
-  max-height: 380px;
+  width: calc(100% - 48px);
+  max-width: 1280px;
+  margin: 20px auto 0;
+  min-height: 420px;
+  max-height: 480px;
+  height: 440px;
+  border-radius: 20px;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #081120;
+  background: #f5ede1;
+  border: 1px solid rgba(212, 196, 175, 0.55);
+  box-shadow: 0 16px 40px rgba(10, 22, 40, 0.08);
 }
 
 .p-hero-img-wrap {
@@ -3297,68 +3303,75 @@
   height: 100%;
   object-fit: cover;
   object-position: center;
-  filter: brightness(0.68) contrast(1.05);
+  filter: brightness(0.98) contrast(1.02);
 }
 
 .p-hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(8,17,32,0.45) 0%, rgba(8,17,32,0.85) 100%);
+  background: linear-gradient(135deg, rgba(253, 251, 248, 0.68) 0%, rgba(248, 244, 237, 0.42) 50%, rgba(244, 238, 228, 0.22) 100%);
 }
 
 .p-hero-content {
   position: relative;
   z-index: 2;
   text-align: center;
-  max-width: 860px;
-  padding: 48px 24px;
+  max-width: 680px;
+  padding: 30px 40px;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(212, 196, 175, 0.75);
+  border-radius: 18px;
+  box-shadow: 0 12px 36px rgba(10, 22, 40, 0.07);
+  margin: 0 20px;
 }
 
 .p-hero-kicker {
   display: inline-block;
-  font-family: var(--fd);
+  font-family: var(--fb);
   font-size: 11px;
-  font-weight: 600;
-  letter-spacing: .15em;
+  font-weight: 700;
+  letter-spacing: .16em;
   text-transform: uppercase;
-  color: var(--gold-light);
-  margin-bottom: 10px;
+  color: #96722d;
+  margin-bottom: 8px;
 }
 
 .p-hero-title {
   font-family: var(--fd);
-  font-size: 46px;
+  font-size: 40px;
   font-weight: 700;
-  color: #ffffff;
+  color: #0a1628;
   letter-spacing: .02em;
-  margin: 0 0 12px;
+  margin: 0 0 10px;
   line-height: 1.15;
 }
 
 .p-hero-desc {
   font-family: var(--fb);
-  font-size: 15px;
-  color: rgba(255, 255, 255, 0.88);
-  max-width: 680px;
+  font-size: 14.5px;
+  color: #334155;
+  max-width: 580px;
   margin: 0 auto;
   line-height: 1.6;
 }
 
-/* Category Pills Section (matching reference image) */
+/* Category Pills Section (Navy Blue / Warm White Theme, Not Colorful) */
 .p-cat-pills-section {
-  background: #ffffff;
-  padding: 36px 0 12px;
+  background: transparent;
+  padding: 44px 0 28px;
 }
 
 .cat-pills-header {
-  margin-bottom: 20px;
+  margin-bottom: 22px;
 }
 
 .cat-pills-title {
-  font-family: var(--fb);
+  font-family: var(--fd);
   font-size: 28px;
   font-weight: 700;
-  color: #2b3445;
+  color: #0a1628;
   margin: 0;
   letter-spacing: -0.01em;
 }
@@ -3366,121 +3379,61 @@
 .cat-pills-scroll-track {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 12px;
-  overflow-x: auto;
-  padding: 4px 2px 14px;
-  scrollbar-width: thin;
-  scrollbar-color: rgba(201, 168, 76, 0.35) transparent;
-  -webkit-overflow-scrolling: touch;
-}
-
-.cat-pills-scroll-track::-webkit-scrollbar {
-  height: 5px;
-}
-
-.cat-pills-scroll-track::-webkit-scrollbar-thumb {
-  background: rgba(201, 168, 76, 0.35);
-  border-radius: 6px;
+  padding: 4px 2px 20px;
 }
 
 .cat-pill {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  padding: 11px 18px;
-  border-radius: 12px;
-  border: 1px solid transparent;
+  padding: 12px 22px;
+  border-radius: 999px;
+  background: #ffffff;
+  border: 1.5px solid rgba(10, 22, 40, 0.12);
+  color: #0a1628;
   cursor: pointer;
   white-space: nowrap;
   font-family: var(--fb);
-  font-size: 13.5px;
+  font-size: 14px;
   font-weight: 600;
   line-height: 1.2;
   text-decoration: none;
   flex-shrink: 0;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.cat-pill:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
-}
-
-.cat-pill:active {
-  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(10, 22, 40, 0.04);
+  transition: all 0.22s ease;
 }
 
 .cat-pill-icon {
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
+  stroke: #0a1628;
   flex-shrink: 0;
+  transition: stroke 0.22s ease;
 }
 
 .cat-pill-text {
   letter-spacing: .01em;
 }
 
-/* Color palettes based on reference image */
-.pill-coral {
-  background: #ff6452;
+.cat-pill:hover,
+.cat-pill:focus-visible {
+  background: #0a1628;
+  border-color: var(--gold);
   color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(10, 22, 40, 0.16);
 }
-.pill-coral .cat-pill-icon { stroke: #ffffff; }
 
-.pill-beige {
-  background: #fae5da;
-  color: #4a2c1d;
+.cat-pill:hover .cat-pill-icon,
+.cat-pill:focus-visible .cat-pill-icon {
+  stroke: var(--gold-light);
 }
-.pill-beige .cat-pill-icon { stroke: #c25e2e; }
 
-.pill-sage {
-  background: #f4ede0;
-  color: #2b3e2b;
+.cat-pill:active {
+  transform: translateY(0);
 }
-.pill-sage .cat-pill-icon { stroke: #457849; }
-
-.pill-amber {
-  background: #fcd58c;
-  color: #4f3900;
-}
-.pill-amber .cat-pill-icon { stroke: #a86c00; }
-
-.pill-periwinkle {
-  background: #9daaf2;
-  color: #ffffff;
-}
-.pill-periwinkle .cat-pill-icon { stroke: #ffffff; }
-
-.pill-peach {
-  background: #f59e66;
-  color: #ffffff;
-}
-.pill-peach .cat-pill-icon { stroke: #ffffff; }
-
-.pill-teal {
-  background: #a5dbd5;
-  color: #124c44;
-}
-.pill-teal .cat-pill-icon { stroke: #124c44; }
-
-.pill-rose {
-  background: #f8ccd4;
-  color: #5c202a;
-}
-.pill-rose .cat-pill-icon { stroke: #872839; }
-
-.pill-ice {
-  background: #b8d7f7;
-  color: #143e6b;
-}
-.pill-ice .cat-pill-icon { stroke: #143e6b; }
-
-.pill-sand {
-  background: #f3dfb7;
-  color: #4f3b14;
-}
-.pill-sand .cat-pill-icon { stroke: #7a5412; }
 
 .cat-pills-divider {
   width: 100%;
@@ -3489,17 +3442,15 @@
   margin: 24px 0 16px;
 }
 
-/* Overview Mode Architecture Rules */
+#view-Products {
+  background: #faf8f5;
+  min-height: 100vh;
+  padding-top: 86px;
+}
+
+/* Overview Mode Architecture Rules: Keep subviews isolated in respective pages */
 #view-Products.overview-mode [id$="-view"] {
-  display: block !important;
-}
-
-#view-Products.overview-mode .subview-back-btn {
   display: none !important;
-}
-
-#view-Products.overview-mode [id$="-view"] > div:first-child {
-  margin-bottom: 0 !important;
 }
 
 #view-Products:not(.overview-mode) #p-overview-banner,
@@ -3509,20 +3460,26 @@
 
 @media (max-width: 768px) {
   .p-overview-hero {
-    min-height: 220px;
+    width: calc(100% - 24px);
+    margin-top: 20px;
+    min-height: 280px;
+    height: 320px;
+  }
+  .p-hero-content {
+    padding: 28px 20px;
   }
   .p-hero-title {
-    font-size: 32px;
+    font-size: 30px;
   }
   .p-hero-desc {
-    font-size: 13px;
+    font-size: 13.5px;
   }
   .cat-pills-title {
     font-size: 24px;
   }
   .cat-pill {
-    padding: 9px 15px;
-    font-size: 12.5px;
+    padding: 10px 18px;
+    font-size: 13px;
   }
 }
 
@@ -4358,22 +4315,35 @@
 }
 
 /* ════════════════════════════════════════════════════════════
-   HOMEPAGE PEARL-WHITE & NAVY-BLUE PALETTE (SECTIONS 2, 3, 5)
+   HOMEPAGE WARM-TONE & LUXURY NAVY PALETTE (SECTIONS 2, 3, 5)
    ════════════════════════════════════════════════════════════ */
 
-/* Headings in Sections 2–5: final 1-2 words (and overall heading) consistently navy blue, never gold */
+/* Base warm tone for homepage */
+#view-home {
+  background: #faf8f5;
+}
+
+#view-home .page {
+  background: #faf8f5;
+}
+
+/* Headings in Sections 2–5 */
 #view-home #home-about-section .ptitle,
 #view-home #home-capabilities-section .ptitle,
 #view-home #home-reviews-section .ptitle,
 #view-home #home-clients-section .ptitle {
-  color: var(--navy) !important; /* #0a1628 */
+  color: var(--navy) !important;
 }
 
-#view-home #home-about-section .ptitle strong,
+/* Gold heading highlights matching reference images (Overview in Sec 3, Serve in Sec 5) */
 #view-home #home-capabilities-section .ptitle strong,
-#view-home #home-reviews-section .ptitle strong,
 #view-home #home-clients-section .ptitle strong {
-  color: var(--navy) !important; /* #0a1628 - navy blue, never gold */
+  color: var(--gold) !important;
+  font-weight: 700;
+}
+
+#view-home #home-about-section .ptitle strong {
+  color: var(--navy) !important;
   font-weight: 700;
 }
 
@@ -4392,11 +4362,12 @@
 
 /* ════════════════════════════════════════════════════════════
    SECTION 2: WHO WE ARE (BUILT FOR CORPORATE SCALE)
-   Clean white background, soft blue accents, navy headings & text
+   Warm white (light) background (#fcfaf7)
    ════════════════════════════════════════════════════════════ */
 #view-home #home-about-section {
-  background: #ffffff;
+  background: #fcfaf7;
   color: #334155;
+  border-bottom: 1px solid rgba(226, 218, 205, 0.6);
 }
 
 #view-home #home-about-section .atext p {
@@ -4410,8 +4381,8 @@
   font-size: 20px;
   font-style: italic;
   color: #0a1628;
-  background: rgba(224, 242, 254, 0.45); /* soft light-blue accent tint */
-  border-left: 3px solid var(--gold);      /* gold highlight */
+  background: rgba(201, 168, 76, 0.08);
+  border-left: 3px solid var(--gold);
   border-radius: 0 8px 8px 0;
   padding: 18px 24px;
   margin: 28px 0;
@@ -4420,15 +4391,15 @@
 
 #view-home #home-about-section .vcard {
   background: #ffffff;
-  border: 1px solid rgba(186, 230, 253, 0.75); /* soft blue accent border */
+  border: 1px solid rgba(226, 218, 205, 0.75);
   box-shadow: 0 4px 16px rgba(10, 22, 40, 0.04);
-  border-radius: 10px;
+  border-radius: 12px;
   padding: 24px;
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
 
 #view-home #home-about-section .vcard:hover {
-  border-color: rgba(56, 189, 248, 0.8);
+  border-color: rgba(201, 168, 76, 0.8);
   box-shadow: 0 8px 24px rgba(10, 22, 40, 0.08);
   transform: translateY(-3px);
 }
@@ -4440,15 +4411,15 @@
   width: 44px;
   height: 44px;
   border-radius: 10px;
-  background: rgba(224, 242, 254, 0.6); /* soft blue accent */
-  border: 1px solid rgba(186, 230, 253, 0.8);
+  background: rgba(201, 168, 76, 0.12);
+  border: 1px solid rgba(201, 168, 76, 0.25);
   font-size: 22px;
   margin-bottom: 14px;
   color: #0a1628;
 }
 
 #view-home #home-about-section .vtitle {
-  color: #0a1628; /* navy-blue heading */
+  color: #0a1628;
   font-size: 13.5px;
   font-weight: 700;
   letter-spacing: .06em;
@@ -4464,94 +4435,158 @@
 
 /* ════════════════════════════════════════════════════════════
    SECTION 3: WHAT WE OFFER (CAPABILITY OVERVIEW)
-   Pearl-white background, soft blue accents, navy headings & icons
+   Matching Image 2: Warm background, top-right gold wave lines,
+   and 3 stacked horizontal rows without emojis
    ════════════════════════════════════════════════════════════ */
 #view-home #home-capabilities-section {
-  background: #f8fafc; /* pearl-white with subtle cool tone */
-  border-top: 1px solid rgba(226, 232, 240, 0.85);
-  border-bottom: 1px solid rgba(226, 232, 240, 0.85);
+  background: #faf7f2;
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid rgba(226, 218, 205, 0.6);
+  border-bottom: 1px solid rgba(226, 218, 205, 0.6);
 }
 
-#view-home #home-capabilities-section .tgrid {
-  gap: 16px;
-  background: transparent;
+/* Decorative top-right wave curves matching Image 2 */
+.cap-bg-decor {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 520px;
+  height: 220px;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.9;
 }
 
-#view-home #home-capabilities-section .titem {
+.cap-wave-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* 3 Horizontal Stacked Rows Container */
+.cap-card-container {
+  position: relative;
+  z-index: 2;
   background: #ffffff;
-  border: 1px solid rgba(186, 230, 253, 0.75); /* soft blue accent border */
-  border-left: 3px solid #0a1628;               /* navy blue accent */
-  border-radius: 10px;
-  box-shadow: 0 4px 16px rgba(10, 22, 40, 0.04);
-  padding: 24px 28px;
-  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+  border: 1px solid rgba(226, 218, 205, 0.85);
+  border-radius: 16px;
+  box-shadow: 0 6px 24px rgba(10, 22, 40, 0.04);
+  overflow: hidden;
+  margin-top: 36px;
 }
 
-#view-home #home-capabilities-section .titem:hover {
-  background: #f0f9ff;                          /* soft light-blue tint on hover */
-  border-color: rgba(56, 189, 248, 0.8);
-  border-left-color: var(--gold);               /* gold highlight */
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(10, 22, 40, 0.08);
-}
-
-#view-home #home-capabilities-section .tico {
-  display: inline-flex;
+.cap-row {
+  display: flex;
   align-items: center;
-  justify-content: center;
-  width: 48px;
-  height: 48px;
-  border-radius: 12px;
-  background: rgba(224, 242, 254, 0.7); /* soft light-blue accent */
-  border: 1px solid rgba(186, 230, 253, 0.8);
-  font-size: 24px;
-  flex-shrink: 0;
-  color: #0a1628;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 26px 36px;
+  border-bottom: 1px solid #f1ece4;
+  cursor: pointer;
+  background: #ffffff;
+  transition: background 0.22s ease;
 }
 
-#view-home #home-capabilities-section .tlbl {
-  color: #0284c7;                               /* light-blue accent */
-  font-size: 10.5px;
+.cap-row:last-child {
+  border-bottom: none;
+}
+
+.cap-row:hover {
+  background: #fdfbf7;
+}
+
+.cap-info {
+  flex: 1;
+}
+
+.cap-tag {
+  font-family: var(--fb);
+  font-size: 11px;
   font-weight: 700;
-  letter-spacing: .18em;
+  letter-spacing: .16em;
   text-transform: uppercase;
+  color: #b8933b;
+  margin-bottom: 6px;
+}
+
+.cap-name {
+  font-family: var(--fd);
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.25;
   margin-bottom: 4px;
 }
 
-#view-home #home-capabilities-section .tname {
-  color: #0a1628;                               /* navy-blue heading */
-  font-family: var(--fd);
-  font-size: 22px;
-  font-weight: 700;
-}
-
-#view-home #home-capabilities-section .tcnt {
-  color: #475569;
-  font-size: 12px;
+.cap-desc {
+  font-family: var(--fb);
+  font-size: 13.5px;
+  color: #64748B;
   line-height: 1.5;
-  margin-top: 4px;
 }
 
-#view-home #home-capabilities-section .tarr {
-  color: #0a1628;
-  opacity: 0.6;
-  font-size: 20px;
-  transition: all var(--t);
+.cap-circle-arrow {
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  border-radius: 50%;
+  border: 1.5px solid #c9a84c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #c9a84c;
+  transition: all 0.22s ease;
 }
 
-#view-home #home-capabilities-section .titem:hover .tarr {
-  color: var(--gold);
-  opacity: 1;
-  transform: translateX(5px);
+.cap-circle-arrow svg {
+  width: 18px;
+  height: 18px;
+}
+
+.cap-row:hover .cap-circle-arrow {
+  background: #c9a84c;
+  color: #ffffff;
+  transform: translateX(4px);
+  box-shadow: 0 4px 12px rgba(201, 168, 76, 0.35);
+}
+
+@media (max-width: 768px) {
+  .cap-card-container {
+    margin-top: 24px;
+    border-radius: 12px;
+  }
+  .cap-row {
+    padding: 20px 18px;
+    gap: 16px;
+  }
+  .cap-name {
+    font-size: 20px;
+  }
+  .cap-desc {
+    font-size: 12.5px;
+  }
+  .cap-circle-arrow {
+    width: 38px;
+    height: 38px;
+    min-width: 38px;
+  }
+  .cap-bg-decor {
+    width: 260px;
+    height: 140px;
+  }
 }
 
 /* ════════════════════════════════════════════════════════════
    SECTION 5: OUR CLIENTS (COMPANIES WE SERVE)
-   Clean white background, soft blue borders, navy headings
+   Warm background, white logo tiles, and bottom gold wave graphic
+   matching Image 1 ("jo last mein graphic h vo bhi daaldo")
    ════════════════════════════════════════════════════════════ */
 #view-home #home-clients-section {
-  background: #ffffff;
-  border-top: 1px solid rgba(226, 232, 240, 0.85);
+  background: #faf8f5;
+  position: relative;
+  padding-bottom: 80px;
+  border-top: 1px solid rgba(226, 218, 205, 0.6);
 }
 
 #view-home #home-clients-section p {
@@ -4560,14 +4595,33 @@
 
 #view-home #home-clients-section .logotile {
   background: #ffffff;
-  border: 1px solid rgba(186, 230, 253, 0.75); /* soft blue accent border */
-  box-shadow: 0 2px 10px rgba(10, 22, 40, 0.03);
-  border-radius: 10px;
+  border: 1px solid rgba(226, 218, 205, 0.75);
+  box-shadow: 0 3px 12px rgba(10, 22, 40, 0.03);
+  border-radius: 12px;
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
 
 #view-home #home-clients-section .logotile:hover {
-  border-color: rgba(56, 189, 248, 0.8);
-  box-shadow: 0 8px 22px rgba(10, 22, 40, 0.08);
+  border-color: rgba(201, 168, 76, 0.8);
+  box-shadow: 0 8px 24px rgba(10, 22, 40, 0.08);
   transform: translateY(-3px);
+}
+
+/* Flowing Golden Wave Ribbon Graphic at Bottom (Image 1) */
+.clients-gold-wave-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 80px;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.clients-gold-wave-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
 }
