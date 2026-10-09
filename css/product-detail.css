@@ -15,8 +15,8 @@ header {
   align-items: center;
   justify-content: space-between;
 }
-.logo { font-family: var(--fd); font-size: 22px; font-weight: 700; }
-.logo span { color: var(--gold); }
+.logo { font-family: var(--fd); font-size: 22px; font-weight: 700; color: #ffffff; }
+.logo span { color: #ffffff; }
 .header-actions a {
   color: var(--gold-light);
   text-decoration: none;

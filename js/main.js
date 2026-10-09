@@ -147,29 +147,36 @@ var corporateViews = [
 ];
 
 /**
- * Hide all corporate category sub-views and restore the main Products overview with banner
+ * Hide specific sub-view isolation and restore the main Products overview with All Products banner, category pills, and all sub-category products
  */
 function closeAllViews() {
   var pv = document.getElementById('view-Products');
-  var hero = pv ? pv.querySelector('.flagship-hero') : null;
-  if (hero) hero.style.display = 'none';
+  if (pv) pv.classList.add('overview-mode');
+
+  var banner = document.getElementById('p-overview-banner');
+  if (banner) banner.style.display = 'block';
 
   var disc = document.getElementById('p-discovery-section');
   if (disc) disc.style.display = 'block';
 
-  var grid = document.getElementById('corporate-categories');
-  if (grid) grid.style.display = 'grid';
-
   corporateViews.forEach(function (id) {
     var el = document.getElementById(id);
-    if (el) el.style.display = 'none';
+    if (el) el.style.display = 'block';
   });
 
+  if (typeof enhanceProductCards === 'function') {
+    enhanceProductCards();
+  }
+
   window.scrollTo({ top: 0, behavior: 'smooth' });
+
+  if (window.history && window.history.replaceState) {
+    window.history.replaceState(null, '', '#Products');
+  }
 }
 
 /**
- * Show a specific product category view and hide banner and category grid
+ * Show a specific product category view and hide banner and other sub-categories
  * @param {string} viewId - Category view container ID
  */
 function showView(viewId) {
@@ -178,7 +185,10 @@ function showView(viewId) {
     v.classList.remove('active');
   });
   var pv = document.getElementById('view-Products');
-  if (pv) pv.classList.add('active');
+  if (pv) {
+    pv.classList.add('active');
+    pv.classList.remove('overview-mode');
+  }
 
   document.querySelectorAll('.nbtn').forEach(function (b) {
     b.classList.remove('active');
@@ -186,20 +196,17 @@ function showView(viewId) {
   var nb = document.getElementById('nb-Products');
   if (nb) nb.classList.add('active');
 
-  // Hide hero banner and discovery overview inside Products view (sub-categories have no banner)
-  var hero = pv ? pv.querySelector('.flagship-hero') : null;
-  if (hero) hero.style.display = 'none';
+  // Hide overview banner and category pills when viewing a specific sub-category page
+  var banner = document.getElementById('p-overview-banner');
+  if (banner) banner.style.display = 'none';
 
   var disc = document.getElementById('p-discovery-section');
   if (disc) disc.style.display = 'none';
 
   corporateViews.forEach(function (id) {
     var el = document.getElementById(id);
-    if (el) el.style.display = 'none';
+    if (el) el.style.display = (id === viewId ? 'block' : 'none');
   });
-
-  var targetView = document.getElementById(viewId);
-  if (targetView) targetView.style.display = 'block';
 
   if (typeof enhanceProductCards === 'function') {
     enhanceProductCards();
@@ -1114,7 +1121,7 @@ function handleRoute(rawHash) {
     gv(h);
     return;
   }
-  if (h === 'Products') {
+  if (h === 'Products' || h === 'products' || h === 'view-products' || h === 'view-Products') {
     gv('Products');
     return;
   }

@@ -32,7 +32,7 @@
   ══════════════════════════════════════ -->
 <nav class="nav">
 <span class="nav-logo" onclick="gv('home')">
-<img alt="Printing Point" class="nav-logo-img" src="pp-logo.jpeg" width="40" height="40"/>
+<img alt="Printing Point" class="nav-logo-img" src="pp-logo-transparent.png" width="40" height="40"/>
       Printing <span>Point</span>
 </span>
 <ul class="nav-links">
@@ -127,11 +127,8 @@
     </div>
     
     <div class="hvb-media-controls">
-      <button class="hvb-media-btn" id="hvbSoundToggle" onclick="toggleHeroVideoSound()" title="Toggle Sound">
-        <span id="hvbSoundIcon">🔇</span> <span id="hvbSoundLabel">Sound Off</span>
-      </button>
-      <button class="hvb-media-btn" id="hvbPlayToggle" onclick="toggleHeroVideoPlay()" title="Toggle Playback">
-        <span id="hvbPlayIcon">⏸</span> <span id="hvbPlayLabel">Pause</span>
+      <button class="hvb-vol-btn" id="hvbSoundToggle" onclick="toggleHeroVideoSound()" title="Toggle Sound" aria-label="Toggle Sound">
+        <span id="hvbSoundIcon">🔇</span>
       </button>
     </div>
     
@@ -331,110 +328,135 @@
 <!-- ══════════════════════════════════════
      Products VIEW
 ══════════════════════════════════════ -->
-<div class="view" id="view-Products">
+<div class="view overview-mode" id="view-Products">
 <!-- ══════════════════════════════════════
      PRODUCTS OVERVIEW — FLAGSHIP SECTION
      Dedicated top-level independent architecture
 ══════════════════════════════════════ -->
 
+<!-- ===================== ALL PRODUCTS HERO BANNER ===================== -->
+<section class="p-overview-hero" id="p-overview-banner">
+  <div class="p-hero-img-wrap">
+    <img src="assets/all-products-banner.jpg" alt="All Products Banner" class="p-hero-banner-img" />
+    <div class="p-hero-overlay"></div>
+  </div>
+  <div class="p-hero-content">
+    <span class="p-hero-kicker">✦ Complete Corporate Showcase</span>
+    <h1 class="p-hero-title">All Products</h1>
+    <p class="p-hero-desc">Bespoke corporate gifting &amp; custom merchandise engineered for lasting impressions — from vacuum-insulated drinkware and executive organizers to luxury gift hampers and electronics.</p>
+  </div>
+</section>
 
-<!-- ===================== VISUAL CATEGORY DISCOVERY ===================== -->
-<section class="cg-sec cg-tint" id="p-discovery-section">
+<!-- ===================== PRODUCT CATEGORIES PILLS ===================== -->
+<section class="cg-sec p-cat-pills-section" id="p-discovery-section">
   <div class="cg-container">
-    <div class="cg-header">
-      <span class="cg-kicker-sm">Visual Discovery</span>
-      <h2>Shop by <strong>Product Category</strong></h2>
-      <p>Select any category below to access its dedicated overview page, complete with live search, alphabetical sorting, verified specifications, and instant quote requests.</p>
+    <div class="cat-pills-header">
+      <h2 class="cat-pills-title">Product Categories</h2>
     </div>
-    <div class="p-discovery-grid" id="corporate-categories">
-      <div class="p-cat-card" onclick="openBottlesView()">
-        <div>
-          <div class="p-cat-icon">🍶</div>
-          <h3>Bottles &amp; Flasks</h3>
-          <p>Stainless steel, copper, borosilicate glass, and plastic bottles. Vacuum-insulated flasks for hot and cold beverages.</p>
-        </div>
-        <div>
-          <div class="p-cat-meta">Laser Engraving · Screen Print · Rotary UV</div>
-          <button class="p-cat-btn">Explore Category <span>→</span></button>
-        </div>
-      </div>
-      <div class="p-cat-card" onclick="openMugsSippersView()">
-        <div>
-          <div class="p-cat-icon">☕</div>
-          <h3>Mugs &amp; Sippers</h3>
-          <p>Self-stirring mugs, ceramic printed mugs, insulated travel tumblers, glass sippers, and smart temperature mugs.</p>
-        </div>
-        <div>
-          <div class="p-cat-meta">Screen Print · UV Print · Laser Engraving</div>
-          <button class="p-cat-btn">Explore Category <span>→</span></button>
-        </div>
-      </div>
-      <div class="p-cat-card" onclick="openBagsView()">
-        <div>
-          <div class="p-cat-icon">👜</div>
-          <h3>Bags</h3>
-          <p>Laptop bags, tote bags, backpacks, conference bags, and drawstring pouches. Fabric and leather options available.</p>
-        </div>
-        <div>
-          <div class="p-cat-meta">Precision Embroidery · Screen Print · UV Print</div>
-          <button class="p-cat-btn">Explore Category <span>→</span></button>
-        </div>
-      </div>
-      <div class="p-cat-card" onclick="openGiftSetsView()">
-        <div>
-          <div class="p-cat-icon">🎁</div>
-          <h3>Gift Sets</h3>
-          <p>Curated corporate gift hampers and combo sets. Onboarding kits, festive gifting, and executive appreciation packages.</p>
-        </div>
-        <div>
-          <div class="p-cat-meta">Foil Stamping · Mixed Techniques · Custom Boxes</div>
-          <button class="p-cat-btn">Explore Category <span>→</span></button>
-        </div>
-      </div>
-      <div class="p-cat-card" onclick="openNotebooksView()">
-        <div>
-          <div class="p-cat-icon">📓</div>
-          <h3>Notebooks &amp; Diaries</h3>
-          <p>Hardbound writing notebooks, handcrafted leatherite organizers, wireless charging power bank diaries, and thematic editions.</p>
-        </div>
-        <div>
-          <div class="p-cat-sublinks" style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px;">
-            <span class="p-sublink-pill" onclick="event.stopPropagation(); openNotebooksSubView('notebooks');" style="font-size:11px;padding:4px 8px;border-radius:4px;background:rgba(201,168,76,0.12);color:var(--gold-light);cursor:pointer;border:1px solid rgba(201,168,76,0.25);">Notebooks</span>
-            <span class="p-sublink-pill" onclick="event.stopPropagation(); openNotebooksSubView('leatherite');" style="font-size:11px;padding:4px 8px;border-radius:4px;background:rgba(201,168,76,0.12);color:var(--gold-light);cursor:pointer;border:1px solid rgba(201,168,76,0.25);">Leatherite Diaries</span>
-            <span class="p-sublink-pill" onclick="event.stopPropagation(); openNotebooksSubView('powerbank');" style="font-size:11px;padding:4px 8px;border-radius:4px;background:rgba(201,168,76,0.12);color:var(--gold-light);cursor:pointer;border:1px solid rgba(201,168,76,0.25);">Power Bank Diaries</span>
-            <span class="p-sublink-pill" onclick="event.stopPropagation(); openNotebooksSubView('theme');" style="font-size:11px;padding:4px 8px;border-radius:4px;background:rgba(201,168,76,0.12);color:var(--gold-light);cursor:pointer;border:1px solid rgba(201,168,76,0.25);">Theme Diaries</span>
-          </div>
-          <div class="p-cat-meta">Foil Stamping · Blind Debossing · Laser Engraving</div>
-          <button class="p-cat-btn">Explore Category <span>→</span></button>
-        </div>
-      </div>
-      <div class="p-cat-card" onclick="openElectronicsView()">
-        <div>
-          <div class="p-cat-icon">💻</div>
-          <h3>Electronics</h3>
-          <p>BIS-certified power banks, wireless chargers, USB hubs, Bluetooth speakers, and smart desk accessories.</p>
-        </div>
-        <div>
-          <div class="p-cat-meta">Laser Engraving · UV Color Flatbed · Pad Print</div>
-          <button class="p-cat-btn">Explore Category <span>→</span></button>
-        </div>
-      </div>
-      <div class="p-cat-card" onclick="openMobileStandsView()">
-        <div>
-          <div class="p-cat-icon">📱</div>
-          <h3>Mobile Accessories &amp; Keychains</h3>
-          <p>Foldable mobile stands, pop sockets, engraved metal and acrylic keychains, and multi-tool keyrings.</p>
-        </div>
-        <div>
-          <div class="p-cat-meta">Laser Engraving · UV Print · Foil Stamping</div>
-          <button class="p-cat-btn">Explore Category <span>→</span></button>
-        </div>
-      </div>
+    
+    <div class="cat-pills-scroll-track" id="corporate-categories">
+      <!-- 1. Bottles & Flasks -->
+      <button type="button" class="cat-pill pill-coral" onclick="openBottlesView()" title="Bottles &amp; Flasks">
+        <svg class="cat-pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M10 2h4M10 5h4M9 8h6v12a2 2 0 0 1-2 2h-2a2 2 0 0 1-2-2V8zM8 8a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2"/>
+        </svg>
+        <span class="cat-pill-text">Bottles &amp; Flasks</span>
+      </button>
+
+      <!-- 2. Mugs & Sippers -->
+      <button type="button" class="cat-pill pill-beige" onclick="openMugsSippersView()" title="Mugs &amp; Sippers">
+        <svg class="cat-pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 8h1a4 4 0 0 1 0 8h-1M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8zM6 2v2M10 2v2M14 2v2"/>
+        </svg>
+        <span class="cat-pill-text">Mugs &amp; Sippers</span>
+      </button>
+
+      <!-- 3. Bags -->
+      <button type="button" class="cat-pill pill-sage" onclick="openBagsView()" title="Bags">
+        <svg class="cat-pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="7" width="18" height="14" rx="3"/>
+          <path d="M8 7V5a4 4 0 0 1 8 0v2M12 11v2"/>
+        </svg>
+        <span class="cat-pill-text">Bags</span>
+      </button>
+
+      <!-- 4. Gift Sets -->
+      <button type="button" class="cat-pill pill-amber" onclick="openGiftSetsView()" title="Gift Sets">
+        <svg class="cat-pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="20 12 20 22 4 22 4 12"/>
+          <rect x="2" y="7" width="20" height="5"/>
+          <line x1="12" y1="22" x2="12" y2="7"/>
+          <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7zM12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/>
+        </svg>
+        <span class="cat-pill-text">Gift Sets</span>
+      </button>
+
+      <!-- 5. Notebooks -->
+      <button type="button" class="cat-pill pill-periwinkle" onclick="openNotebooksView()" title="Notebooks">
+        <svg class="cat-pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+          <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+          <line x1="8" y1="7" x2="16" y2="7"/>
+          <line x1="8" y1="11" x2="14" y2="11"/>
+        </svg>
+        <span class="cat-pill-text">Notebooks</span>
+      </button>
+
+      <!-- 6. Leatherite Diaries -->
+      <button type="button" class="cat-pill pill-peach" onclick="openLeatheriteDiariesView()" title="Leatherite Diaries">
+        <svg class="cat-pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 4v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2z"/>
+          <line x1="8" y1="2" x2="8" y2="22"/>
+          <path d="M14 9h3M14 13h3"/>
+        </svg>
+        <span class="cat-pill-text">Leatherite Diaries</span>
+      </button>
+
+      <!-- 7. Power Bank Diaries -->
+      <button type="button" class="cat-pill pill-teal" onclick="openPowerBankDiariesView()" title="Power Bank Diaries">
+        <svg class="cat-pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="7" width="16" height="10" rx="2"/>
+          <line x1="20" y1="11" x2="20" y2="13"/>
+          <line x1="6" y1="12" x2="12" y2="12"/>
+          <polyline points="9 9 12 12 9 15"/>
+        </svg>
+        <span class="cat-pill-text">Power Bank Diaries</span>
+      </button>
+
+      <!-- 8. Theme Diaries -->
+      <button type="button" class="cat-pill pill-rose" onclick="openThemeDiariesView()" title="Theme Diaries">
+        <svg class="cat-pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"/>
+          <path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01"/>
+        </svg>
+        <span class="cat-pill-text">Theme Diaries</span>
+      </button>
+
+      <!-- 9. Electronics -->
+      <button type="button" class="cat-pill pill-ice" onclick="openElectronicsView()" title="Electronics">
+        <svg class="cat-pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="4" y="4" width="16" height="12" rx="2"/>
+          <line x1="8" y1="20" x2="16" y2="20"/>
+          <line x1="12" y1="16" x2="12" y2="20"/>
+        </svg>
+        <span class="cat-pill-text">Electronics</span>
+      </button>
+
+      <!-- 10. Mobile Accessories -->
+      <button type="button" class="cat-pill pill-sand" onclick="openMobileStandsView()" title="Mobile Accessories &amp; Keychains">
+        <svg class="cat-pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="5" y="2" width="14" height="20" rx="2"/>
+          <line x1="12" y1="18" x2="12.01" y2="18"/>
+        </svg>
+        <span class="cat-pill-text">Mobile Accessories</span>
+      </button>
     </div>
+    
+    <div class="cat-pills-divider"></div>
   </div>
 </section>
 <!-- ===================== BOTTLES & FLASKS VIEW ===================== -->
-<div id="bottles-view" style="display:none;">
+<div id="bottles-view">
 <div style="margin-bottom:30px;">
 <button class="subview-back-btn" onclick="closeAllViews()">← Back to Products Overview</button>
 </div>
@@ -864,7 +886,7 @@
 </div>
 </div>
 <!-- ===================== MUGS & SIPPERS VIEW ===================== -->
-<div id="mugs-sippers-view" style="display:none;">
+<div id="mugs-sippers-view">
 <div style="margin-bottom:30px;">
 <button class="subview-back-btn" onclick="closeAllViews()">← Back to Products Overview</button>
 </div>
@@ -1234,7 +1256,7 @@
 </div>
 </div>
 <!-- ===================== BAGS VIEW ===================== -->
-<div id="bags-view" style="display:none;">
+<div id="bags-view">
 <div style="margin-bottom:30px;">
 <button class="subview-back-btn" onclick="closeAllViews()">← Back to Products Overview</button>
 </div>
@@ -1307,7 +1329,7 @@
 </div>
 </div>
 <!-- ===================== GIFT SETS VIEW ===================== -->
-<div id="gift-sets-view" style="display:none;">
+<div id="gift-sets-view">
 <div style="margin-bottom:30px;">
 <button class="subview-back-btn" onclick="closeAllViews()">← Back to Products Overview</button>
 </div>
@@ -1640,7 +1662,7 @@
 </div>
 <!-- ===================== NOTEBOOKS & PENS VIEW ===================== -->
 <!-- ===================== NOTEBOOKS VIEW ===================== -->
-<div id="notebooks-view" style="display:none;">
+<div id="notebooks-view">
 <div style="margin-bottom:30px;">
 <button class="subview-back-btn" onclick="closeAllViews()">← Back to Products Overview</button>
 </div>
@@ -2962,7 +2984,7 @@
 </div>
 
 <!-- ===================== LEATHERITE DIARIES VIEW ===================== -->
-<div id="leatherite-diaries-view" style="display:none;">
+<div id="leatherite-diaries-view">
 <div style="margin-bottom:30px;">
 <button class="subview-back-btn" onclick="closeAllViews()">← Back to Products Overview</button>
 </div>
@@ -3119,7 +3141,7 @@
 </div>
 
 <!-- ===================== POWER BANK DIARIES VIEW ===================== -->
-<div id="powerbank-diaries-view" style="display:none;">
+<div id="powerbank-diaries-view">
 <div style="margin-bottom:30px;">
 <button class="subview-back-btn" onclick="closeAllViews()">← Back to Products Overview</button>
 </div>
@@ -3471,7 +3493,7 @@
 </div>
 
 <!-- ===================== THEME DIARIES VIEW ===================== -->
-<div id="theme-diaries-view" style="display:none;">
+<div id="theme-diaries-view">
 <div style="margin-bottom:30px;">
 <button class="subview-back-btn" onclick="closeAllViews()">← Back to Products Overview</button>
 </div>
@@ -3659,7 +3681,7 @@
 </div>
 
 <!-- ===================== ELECTRONICS VIEW ===================== -->
-<div id="electronics-view" style="display:none;">
+<div id="electronics-view">
 <div style="margin-bottom:30px;">
 <button class="subview-back-btn" onclick="closeAllViews()">← Back to Products Overview</button>
 </div>
@@ -3816,7 +3838,7 @@
 </div>
 
 <!-- ===================== MOBILE STANDS & KEYCHAINS VIEW ===================== -->
-<div id="mobile-stands-view" style="display:none;">
+<div id="mobile-stands-view">
 <div style="margin-bottom:30px;">
 <button class="subview-back-btn" onclick="closeAllViews()">← Back to Products Overview</button>
 </div>

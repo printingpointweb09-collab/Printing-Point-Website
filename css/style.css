@@ -353,35 +353,32 @@
     .hvb-media-controls {
       position: absolute;
       bottom: 24px;
-      right: 32px;
-      z-index: 4;
+      right: 100px;
+      z-index: 10;
       display: flex;
       align-items: center;
       gap: 10px;
     }
 
-    .hvb-media-btn {
+    .hvb-vol-btn {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
-      padding: 8px 14px;
-      border-radius: 20px;
-      background: rgba(8, 17, 32, 0.78);
-      backdrop-filter: blur(8px);
-      border: 1px solid rgba(223, 192, 122, 0.35);
-      color: rgba(255, 255, 255, 0.9);
-      font-size: 12px;
-      font-weight: 500;
-      letter-spacing: .02em;
+      justify-content: center;
+      background: transparent;
+      border: none;
+      color: #ffffff;
+      font-size: 26px;
       cursor: pointer;
-      transition: all 0.2s ease;
+      transition: transform 0.2s ease, filter 0.2s ease;
+      user-select: none;
+      padding: 6px;
+      line-height: 1;
+      filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.8));
     }
 
-    .hvb-media-btn:hover {
-      background: rgba(201, 168, 76, 0.25);
-      border-color: var(--gold);
-      color: #fff;
-      transform: scale(1.04);
+    .hvb-vol-btn:hover {
+      transform: scale(1.22);
+      filter: drop-shadow(0 0 10px rgba(223, 192, 122, 0.85));
     }
 
     .hvb-scroll-down {
@@ -435,8 +432,8 @@
         font-size: 15px;
       }
       .hvb-media-controls {
-        bottom: 16px;
-        right: 16px;
+        bottom: 18px;
+        right: 88px;
       }
       .hvb-scroll-down {
         display: none;
@@ -1129,7 +1126,7 @@
       font-family: var(--fd);
       font-size: 18px;
       font-weight: 700;
-      color: var(--gold);
+      color: #ffffff;
       text-transform: uppercase;
       letter-spacing: .08em
     }
@@ -2164,29 +2161,27 @@
       font-size: 24px;
       font-weight: 700;
       letter-spacing: .065em;
-      color: var(--off-white);
+      color: #ffffff;
       text-transform: uppercase;
       user-select: none;
     }
 
     .nav-logo span {
-      color: var(--gold);
+      color: #ffffff;
     }
 
     .nav-logo-img {
       height: 40px;
       width: 40px;
       flex: 0 0 40px;
-      object-fit: cover;
-      border-radius: 8px;
-      border: 1px solid rgba(223, 192, 122, 0.3);
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
-      transition: transform 0.2s ease, border-color 0.2s ease;
+      object-fit: contain;
+      filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.35));
+      transition: transform 0.2s ease, filter 0.2s ease;
     }
 
     .nav-logo:hover .nav-logo-img {
-      transform: scale(1.04);
-      border-color: rgba(223, 192, 122, 0.6);
+      transform: scale(1.06);
+      filter: drop-shadow(0 2px 8px rgba(223, 192, 122, 0.45));
     }
 
     .nav-links {
@@ -3276,32 +3271,259 @@
 }
 
 /* ════════════════════════════════════════════════════════════
-   PRODUCTS OVERVIEW — VISUAL CATEGORY DISCOVERY
+   PRODUCTS OVERVIEW — ALL PRODUCTS HERO BANNER & CATEGORY PILLS
    ════════════════════════════════════════════════════════════ */
-.p-discovery-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 22px;
-  margin-bottom: 50px;
-}
-
-.p-cat-card {
-  background: var(--white);
-  border: 1px solid var(--grey-light);
-  border-radius: 10px;
-  padding: 24px 20px;
+.p-overview-hero {
+  position: relative;
+  width: 100%;
+  min-height: 280px;
+  max-height: 380px;
+  overflow: hidden;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  cursor: pointer;
-  transition: all var(--t);
-  text-align: left;
+  align-items: center;
+  justify-content: center;
+  background: #081120;
 }
 
-.p-cat-card:hover {
-  border-color: var(--gold);
-  box-shadow: 0 12px 35px rgba(201,168,76,0.15);
-  transform: translateY(-4px);
+.p-hero-img-wrap {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.p-hero-banner-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: brightness(0.68) contrast(1.05);
+}
+
+.p-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(8,17,32,0.45) 0%, rgba(8,17,32,0.85) 100%);
+}
+
+.p-hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 860px;
+  padding: 48px 24px;
+}
+
+.p-hero-kicker {
+  display: inline-block;
+  font-family: var(--fd);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  margin-bottom: 10px;
+}
+
+.p-hero-title {
+  font-family: var(--fd);
+  font-size: 46px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: .02em;
+  margin: 0 0 12px;
+  line-height: 1.15;
+}
+
+.p-hero-desc {
+  font-family: var(--fb);
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.88);
+  max-width: 680px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Category Pills Section (matching reference image) */
+.p-cat-pills-section {
+  background: #ffffff;
+  padding: 36px 0 12px;
+}
+
+.cat-pills-header {
+  margin-bottom: 20px;
+}
+
+.cat-pills-title {
+  font-family: var(--fb);
+  font-size: 28px;
+  font-weight: 700;
+  color: #2b3445;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.cat-pills-scroll-track {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  overflow-x: auto;
+  padding: 4px 2px 14px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(201, 168, 76, 0.35) transparent;
+  -webkit-overflow-scrolling: touch;
+}
+
+.cat-pills-scroll-track::-webkit-scrollbar {
+  height: 5px;
+}
+
+.cat-pills-scroll-track::-webkit-scrollbar-thumb {
+  background: rgba(201, 168, 76, 0.35);
+  border-radius: 6px;
+}
+
+.cat-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 18px;
+  border-radius: 12px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  white-space: nowrap;
+  font-family: var(--fb);
+  font-size: 13.5px;
+  font-weight: 600;
+  line-height: 1.2;
+  text-decoration: none;
+  flex-shrink: 0;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cat-pill:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+}
+
+.cat-pill:active {
+  transform: translateY(0);
+}
+
+.cat-pill-icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.cat-pill-text {
+  letter-spacing: .01em;
+}
+
+/* Color palettes based on reference image */
+.pill-coral {
+  background: #ff6452;
+  color: #ffffff;
+}
+.pill-coral .cat-pill-icon { stroke: #ffffff; }
+
+.pill-beige {
+  background: #fae5da;
+  color: #4a2c1d;
+}
+.pill-beige .cat-pill-icon { stroke: #c25e2e; }
+
+.pill-sage {
+  background: #f4ede0;
+  color: #2b3e2b;
+}
+.pill-sage .cat-pill-icon { stroke: #457849; }
+
+.pill-amber {
+  background: #fcd58c;
+  color: #4f3900;
+}
+.pill-amber .cat-pill-icon { stroke: #a86c00; }
+
+.pill-periwinkle {
+  background: #9daaf2;
+  color: #ffffff;
+}
+.pill-periwinkle .cat-pill-icon { stroke: #ffffff; }
+
+.pill-peach {
+  background: #f59e66;
+  color: #ffffff;
+}
+.pill-peach .cat-pill-icon { stroke: #ffffff; }
+
+.pill-teal {
+  background: #a5dbd5;
+  color: #124c44;
+}
+.pill-teal .cat-pill-icon { stroke: #124c44; }
+
+.pill-rose {
+  background: #f8ccd4;
+  color: #5c202a;
+}
+.pill-rose .cat-pill-icon { stroke: #872839; }
+
+.pill-ice {
+  background: #b8d7f7;
+  color: #143e6b;
+}
+.pill-ice .cat-pill-icon { stroke: #143e6b; }
+
+.pill-sand {
+  background: #f3dfb7;
+  color: #4f3b14;
+}
+.pill-sand .cat-pill-icon { stroke: #7a5412; }
+
+.cat-pills-divider {
+  width: 100%;
+  height: 1px;
+  background: rgba(10, 22, 40, 0.08);
+  margin: 24px 0 16px;
+}
+
+/* Overview Mode Architecture Rules */
+#view-Products.overview-mode [id$="-view"] {
+  display: block !important;
+}
+
+#view-Products.overview-mode .subview-back-btn {
+  display: none !important;
+}
+
+#view-Products.overview-mode [id$="-view"] > div:first-child {
+  margin-bottom: 0 !important;
+}
+
+#view-Products:not(.overview-mode) #p-overview-banner,
+#view-Products:not(.overview-mode) #p-discovery-section {
+  display: none !important;
+}
+
+@media (max-width: 768px) {
+  .p-overview-hero {
+    min-height: 220px;
+  }
+  .p-hero-title {
+    font-size: 32px;
+  }
+  .p-hero-desc {
+    font-size: 13px;
+  }
+  .cat-pills-title {
+    font-size: 24px;
+  }
+  .cat-pill {
+    padding: 9px 15px;
+    font-size: 12.5px;
+  }
 }
 
 .p-cat-icon {
