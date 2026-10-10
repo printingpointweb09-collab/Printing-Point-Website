@@ -239,16 +239,23 @@
   </div>
 </section>
 <!-- REVIEWS -->
-<section class="page light section compact-section" id="home-reviews-section">
+<section class="section compact-section" id="home-reviews-section">
 <div class="pi">
-<div class="eyebrow">Testimonials</div>
-<h2 class="ptitle">Client <strong>Reviews</strong></h2>
-<div class="pdiv"></div>
-<p style="font-size:14px;color:var(--grey-text);max-width:640px;margin-bottom:40px;line-height:1.8;">
-          What our corporate clients say about working with Printing Point.
-        </p>
-<!-- REVIEW CARDS — replace placeholder text/names with real testimonials. Keep exactly these cards; JS duplicates them automatically for the seamless scroll loop. -->
-<div class="reviewscroll-wrap">
+  <div class="reviews-header-bar">
+    <div>
+      <div class="eyebrow">Testimonials</div>
+      <h2 class="ptitle">Client <strong>Reviews</strong></h2>
+      <div class="pdiv"></div>
+      <p style="font-size:14px;color:#475569;max-width:640px;margin-bottom:28px;line-height:1.8;">
+        What our corporate clients say about working with Printing Point.
+      </p>
+    </div>
+    <div class="reviews-nav-arrows" aria-label="Review Navigation">
+      <button class="rev-arrow-btn rev-prev-btn" onclick="scrollReviews(-1)" aria-label="Previous review" title="Previous review">←</button>
+      <button class="rev-arrow-btn rev-next-btn" onclick="scrollReviews(1)" aria-label="Next review" title="Next review">→</button>
+    </div>
+  </div>
+  <div class="reviewscroll-wrap">
 <div class="reviewgrid" id="reviewTrack">
 <div class="reviewcard">
 <div class="review-stars">★★★★★</div>

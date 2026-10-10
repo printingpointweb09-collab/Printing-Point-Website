@@ -1225,8 +1225,9 @@ document.addEventListener('DOMContentLoaded', function () {
   // Enhance product cards on initial load
   enhanceProductCards();
 
-  // Duplicate review cards once for seamless CSS marquee infinite scroll
+  // Duplicate review cards once for seamless CSS marquee infinite scroll & interactive navigation
   var track = document.getElementById('reviewTrack');
+  var reviewWrap = document.querySelector('.reviewscroll-wrap');
   if (track) {
     var originalCards = Array.prototype.slice.call(track.children);
     originalCards.forEach(function (card) {
@@ -1234,7 +1235,38 @@ document.addEventListener('DOMContentLoaded', function () {
       clone.setAttribute('aria-hidden', 'true');
       track.appendChild(clone);
     });
+
+    if (reviewWrap) {
+      reviewWrap.addEventListener('touchstart', function () {
+        track.style.animationPlayState = 'paused';
+      }, { passive: true });
+      reviewWrap.addEventListener('touchend', function () {
+        clearTimeout(window._revTimer);
+        window._revTimer = setTimeout(function () {
+          if (window.innerWidth > 900) {
+            track.style.animationPlayState = 'running';
+          }
+        }, 3500);
+      }, { passive: true });
+    }
   }
+
+  // Interactive review arrow navigation
+  window.scrollReviews = function (direction) {
+    var wrap = document.querySelector('.reviewscroll-wrap');
+    var trk = document.getElementById('reviewTrack');
+    if (!wrap) return;
+    if (trk) trk.style.animationPlayState = 'paused';
+    var card = wrap.querySelector('.reviewcard');
+    var step = card ? card.offsetWidth + 20 : 320;
+    wrap.scrollBy({ left: direction * step, behavior: 'smooth' });
+    clearTimeout(window._revTimer);
+    window._revTimer = setTimeout(function () {
+      if (window.innerWidth > 900 && trk) {
+        trk.style.animationPlayState = 'running';
+      }
+    }, 4000);
+  };
 
   // Phase 03: Product Category Search & Sort filtering
   document.querySelectorAll('.product-category-shell').forEach(function (shell) {
